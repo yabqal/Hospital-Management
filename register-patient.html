@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/register-patient.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Register Patient</title>
+</head>
+<body>
+  <div class="page-container">
+    <div class="top-bar">
+      <div class="title-button">
+        <div class="title">Register Patient</div>
+        <div class="nav-btns">
+          <div class="back-btn"><img src="icons/arrow-left.svg" alt=""></div>
+          <div class="home-btn"><img src="icons/home-2.svg" alt=""></div>
+          <div class="log-out-btn">Log Out</div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="form-container">
+      <form action="">
+        <div class="section-title">Basic Details</div>
+        <div class="input-group">
+          <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName">
+          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" style="margin: 0px 24px;">
+          <input class="name-input inp" type="text" placeholder="Grand Father's Name" id="lName" name="lName">
+        </div>
+        <div class="input-group">
+          <input class="inp" type="number" min="0" placeholder="Age">
+          <input class="inp add-input" type="text" placeholder="Address">
+          <input class="inp date-input" type="text" placeholder="Date">
+        </div>
+        <div class="section-title" style="margin-top: 48px;">Additional Details</div>
+        <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body{
+    background-color: #060D17;
+    color: #E2E2E2;
+    font-family: "Inter", sans-serif;
+}
+
+hr{
+    border: solid 0.5px rgba(255, 255, 255, 0.1);
+}
+
+.page-container{
+    width: 90%;
+    place-self: center;
+}
+
+/* Header */
+
+.top-bar{
+    margin-top: 40px;
+    margin-bottom: 32px;
+}
+
+.title-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.nav-btns{
+    display: flex;
+    align-items: center;
+}
+
+.back-btn, .home-btn{
+    margin-right: 16px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.back-btn:hover, .home-btn:hover{
+    background-color: #151f2c;
+    cursor: pointer;
+}
+
+.back-btn img, .home-btn img{
+    width: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.home-btn{
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.log-out-btn{
+    background-color: #d13f32;
+    color: #fafafa;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+.log-out-btn:hover{
+    background-color: #ed3120;
+    color: white;
+    filter: drop-shadow(0 0 10px #ed3120);
+    cursor: pointer;
+}
+
+/* Main Page */
+
+.list-item{
+    display: flex;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: #101823;
+    border-radius: 16px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.list-item:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.482);
+}
+
+.list-item:active{
+    box-shadow: 0px 0px 0px;
+}
+
+.list-item img{
+    width: 24px;
+    margin-right: 20px;
+}
