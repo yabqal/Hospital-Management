@@ -57,6 +57,14 @@
     width: 100%;
 }
 
+.equal-inp *{
+    width: 20%;
+}
+
+.emergency-inp-group *{
+    width: 28%;
+}
+
 .age-input{
     width: 16%;
 }
@@ -104,6 +112,8 @@ input[type=file]::file-selector-button:hover{
 input[type=file]::file-selector-button:active{
     background-color: rgba(0, 102, 255, 0.328);
 }
+
+/* Buttons */
 
 button[type=submit]{
     display: flex;
