@@ -132,7 +132,7 @@ input[type=file]::file-selector-button:active{
 .sex-input::after{
   content: "\25B6";
   position: absolute;
-  right: 20px;
+  right: 23px;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   pointer-events: none;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="styles/common.css" />
   <link rel="stylesheet" href="styles/register-patient.css" />
+  <link rel="stylesheet" href="styles/register-doctor.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
@@ -52,15 +53,15 @@
             required />
         </div>
 
-        <div class="input-group">
-          <input class="inp" type="email" name="email" placeholder="Email (optional)" />
+        <div class="input-group equal-inp">
+          <input class="inp email-input" type="email" name="email" placeholder="Email (optional)" />
           <input class="inp" type="text" name="license" placeholder="Medical License Number" required />
           <input class="inp add-input" type="text" name="address" placeholder="Address" required />
         </div>
 
         <div class="input-group">
           <input class="inp date-input" type="date" name="startDate" placeholder="Start Date" required />
-          <input class="inp" type="text" name="workingHours" placeholder="Working Hours (e.g. 9AM - 5PM)" required />
+          <input class="inp wrkhrs" type="text" name="workingHours" placeholder="Working Hours (e.g. 9AM - 5PM)" required />
         </div>
 
         <div class="section-title" style="margin-top: 48px;">Additional Info</div>

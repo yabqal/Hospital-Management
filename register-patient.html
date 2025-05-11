@@ -39,11 +39,13 @@
         </div>
 
         <div class="input-group equal-inp">
-          <select class="inp" name="sex" required>
+          <div class="sex-input">
+            <select class="inp" name="sex" required>
             <option value="" disabled selected>Sex</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
+          </div>
           <input 
             class="inp" 
             type="tel" 
@@ -76,7 +78,7 @@
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
         <div class="photo-and-btn">
           <input type="file" name="photo" id="photo">
-          <button type="submit">Register <img src="/icons/arrow-right.svg" alt=""></button>
+          <button type="submit" class="submit-btn">Register <img src="/icons/arrow-right.svg" alt=""></button>
         </div>
       </form>
     </div>
