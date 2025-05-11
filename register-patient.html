@@ -24,7 +24,7 @@
       <hr>
     </div>
     <div class="form-container">
-      <form action="">
+      <form action="" enctype="multipart/form-data">
         <div class="section-title">Basic Details</div>
         <div class="input-group">
           <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName">
@@ -32,12 +32,16 @@
           <input class="name-input inp" type="text" placeholder="Grand Father's Name" id="lName" name="lName">
         </div>
         <div class="input-group">
-          <input class="inp" type="number" min="0" placeholder="Age">
+          <input class="inp age-input" type="number" min="0" placeholder="Age">
           <input class="inp add-input" type="text" placeholder="Address">
           <input class="inp date-input" type="text" placeholder="Date">
         </div>
         <div class="section-title" style="margin-top: 48px;">Additional Details</div>
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
+        <div class="photo-and-btn">
+          <input type="file" name="photo" id="photo">
+          <button type="submit">Register <img src="/icons/arrow-right.svg" alt=""></button>
+        </div>
       </form>
     </div>
   </div>

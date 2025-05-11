@@ -18,6 +18,7 @@ hr{
 .top-bar{
     margin-top: 40px;
     margin-bottom: 32px;
+    min-width: 633px;
 }
 
 .title-button{
@@ -46,7 +47,6 @@ hr{
 
 .back-btn img, .home-btn img{
     width: 24px;
-    filter: brightness(0) invert(1);
 }
 
 .home-btn{
