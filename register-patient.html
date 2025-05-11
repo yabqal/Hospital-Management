@@ -33,9 +33,14 @@
         </div>
 
         <div class="input-group">
-          <input class="inp" type="number" min="0" placeholder="Age" name="age" required />
+          <input class="inp age-input" type="number" min="0" placeholder="Age">
+          <input class="inp add-input" type="text" placeholder="Address">
+          <input class="inp date-input" type="date" placeholder="Date">
+        </div>
+
+        <div class="input-group equal-inp">
           <div class="sex-input">
-            <select class="inp sex-input" name="sex" required>
+            <select class="inp" name="sex" required>
               <option value="" disabled selected>Sex</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -48,18 +53,14 @@
             placeholder="Phone Number" 
             pattern="(09|07)[0-9]{8}" 
             title="Phone number must start with 09 or 07 and have 10 digits" 
+            style="margin-left: 24px;"
             required />
-        </div>
-
-        <div class="input-group">
-          <input class="inp" type="email" placeholder="Email (optional)" name="email" />
+          <input class="inp" type="email" placeholder="Email (optional)" name="email" style="margin: 0px 24px;" />
           <input class="inp" type="text" placeholder="Hospital Card Number" name="cardNumber" required />
-          <input class="inp add-input" type="text" placeholder="Address" name="address" required />
-          <input class="inp date-input" type="date" placeholder="Date" name="date" required />
         </div>
 
         <div class="section-title" style="margin-top: 48px;">Emergency Contact</div>
-        <div class="input-group">
+        <div class="input-group emergency-inp-group">
           <input class="inp" type="text" placeholder="Emergency Contact Name" name="emergencyName" required />
           <input 
             class="inp" 
@@ -67,15 +68,18 @@
             name="emergencyPhone" 
             placeholder="Emergency Phone" 
             pattern="(09|07)[0-9]{8}" 
-            title="Phone number must start with 09 or 07 and have 10 digits" 
+            title="Phone number must start with 09 or 07 and have 10 digits"
+            style="margin: 0px 24px;" 
             required />
           <input class="inp" type="text" placeholder="Relationship" name="emergencyRelation" required />
         </div>
 
         <div class="section-title" style="margin-top: 48px;">Additional Details</div>
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
-
-          <button type="submit" class="submit-btn">Register</button>
+        <div class="photo-and-btn">
+          <input type="file" name="photo" id="photo">
+          <button type="submit" class="submit-btn">Register <img src="/icons/arrow-right.svg" alt=""></button>
+        </div>
       </form>
     </div>
   </div>

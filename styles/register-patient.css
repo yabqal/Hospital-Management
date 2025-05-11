@@ -2,6 +2,7 @@
     padding: 32px 55px;
     background-color: #101823;
     border-radius: 16px;
+    min-width: 524px;
 }
 
 .form-container form {
@@ -61,34 +62,25 @@
     width: 100%;
 }
 
-/* .add-input{
-    flex-grow: 2;
+.equal-inp *{
+    width: 20%;
+}
+
+.emergency-inp-group *{
+    width: 28%;
+}
+
+.age-input{
+    width: 16%;
+}
+
+.add-input{
+    width: 40%;
+    margin: 0px 24px;
 }
 
 .date-input{
-    flex-grow: 1;
-} */
-
- .sex-input {
-  position: relative;
-}
-
-.sex-input select {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
-  height: 100%;
-}
-
-.sex-input::after {
-  content: "\25BC";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  pointer-events: none;
-  place-self: center;
-  font-size: 13px;
+    width: 28%;
 }
 
 .txt-area{
@@ -96,28 +88,107 @@
     height: 240px;
     line-height: 28px;
     resize: none;
+    margin-bottom: 16px;
+}
+
+.photo-and-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=file]::file-selector-button{
+    background-color: rgba(0, 102, 255, 0.201);
+    color: rgb(19, 114, 255);
+    font-family: "Inter" !important;
+    font-weight: 500 !important;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-right: 12px;
+    border: 2px solid transparent;
+    transition-duration: 0.2s;
+}
+
+input[type=file]::file-selector-button:hover{
+    border: 2px solid rgba(0, 102, 255, 0.328);
+    cursor: pointer;
+}
+
+input[type=file]::file-selector-button:active{
+    background-color: rgba(0, 102, 255, 0.328);
+}
+
+.sex-input{
+    position: relative;
+}
+
+.sex-input select{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+}
+
+.sex-input::after{
+  content: "\25B6";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  pointer-events: none;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Buttons */
+
+/* button[type=submit]{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.201);
+    color: rgba(255, 255, 255, 0.802);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 0px 16px;
+    border: 2px solid transparent;
+    transition-duration: 0.2s;
+}
+
+button[type=submit]:hover{
+    border: 2px solid rgba(255, 255, 255, 0.328);
+    cursor: pointer;
+}
+
+button[type=submit]:active{
+    background-color: rgba(255, 255, 255, 0.328);
 }
 
 .btn-holder{
     width: 110px;
     height: 0px;
 }
+*/
 
 .submit-btn{
-    width: 110px;
-    height: 50px;
-    padding-left: 5px;
-    padding-right: 25px;
+    width: 120px;
+    height: 65px;
+    padding-right: 15px;
+    padding-left: 0px;
     text-align: center; 
-    background-color: #050c14;
-    border: 0;
+    background-color: #050e16;
+    border: none;
     border-radius: 16px;
     color: white;
     position: relative;
-    margin-top: 25px;
     font-family: "Inter", sans-serif;
+    font-weight: 500 !important;
+    font-size: 1rem;
     margin-left: auto;
+    margin-right: 0;
     box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.164);
+    box-sizing: content-box;
 }
 
 .submit-btn:hover{
@@ -131,8 +202,8 @@
     display: inline-block;
     transform: rotate(180deg);
     position: absolute;
-    right: 14px;
-    top: 6px;
+    right: 18px;
+    top: 12px;
 }
 
 .submit-btn:hover::after{
