@@ -4,4 +4,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 
-RewrietRule ^(.*)$ index.php?$1 [L,QSA]
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
