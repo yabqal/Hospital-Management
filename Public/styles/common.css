@@ -19,6 +19,7 @@ hr{
     margin-top: 40px;
     margin-bottom: 32px;
     min-width: 633px;
+    min-width: 633px;
 }
 
 .title-button{
@@ -34,19 +35,24 @@ hr{
 }
 
 .back-btn, .home-btn{
-    margin-right: 16px;
-    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    padding: 10px;
     border-radius: 10px;
     transition-duration: 0.2s;
 }
 
 .back-btn:hover, .home-btn:hover{
-    background-color: #151f2c;
+    background-color: #1b273b;
     cursor: pointer;
 }
 
 .back-btn img, .home-btn img{
     width: 24px;
+    height: 100%;
+    filter: brightness(0) invert(1);
 }
 
 .home-btn{
@@ -68,6 +74,7 @@ hr{
     font-size: 16px;
     font-weight: 500;
     transition-duration: 0.4s;
+    margin-left: 5px;
 }
 
 .log-out-btn:hover{

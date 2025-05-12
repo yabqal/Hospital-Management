@@ -1,0 +1,24 @@
+.input-group{
+    width: 100%;
+}
+
+.equal-inp > *{
+    width: 31.5%;
+    box-sizing: border-box;
+}
+
+.date-input{
+    width: 35%;
+}
+
+.wrkhrs{
+    width: 53%;
+}
+
+.sex-input, .email-input{
+    width: 32%;
+}
+
+.add-input{
+    margin-inline: 0px;
+}
