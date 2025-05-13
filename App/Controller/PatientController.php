@@ -13,6 +13,7 @@ class PatientController {
         $p->insert($requestdata);
 
         header('location: /Patients');
+        exit();
     }
 
 }

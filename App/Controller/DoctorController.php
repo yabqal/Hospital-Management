@@ -13,6 +13,7 @@ class DoctorController {
         $d->insert($requestdata);
 
         header('locatiion: /Doctors');
+        exit();
     }
 
 }
