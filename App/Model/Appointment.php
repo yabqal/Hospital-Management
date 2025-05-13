@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../../Abstract/Model.php';
+
 class Appointment extends Model{
 
     function __construct()
