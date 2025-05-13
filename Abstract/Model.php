@@ -22,6 +22,7 @@ abstract class Model{
     function insert($data){
 
         $fields = array_keys($data);
+        //sanitize here?
         $values = array_values($data);
 
         mysqli_query(static::$db, 

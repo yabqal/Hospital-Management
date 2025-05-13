@@ -2,9 +2,11 @@
 
 
 class HomeController{
-    public function index(){
+
+    public function index($requestdata = []){
         View::render('Home');
     }
+    
 }
 
 ?>

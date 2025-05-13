@@ -10,9 +10,13 @@ require_once __DIR__ . '/../App/Controller/HomeController.php';
 
 $requestPath = trim(parse_url($_SERVER['REQUEST_ URI'], PHP_URL_PATH));
 $routes = [
-    '/'          => ['controller' => 'HomeController', 'action' => 'index'],
-    '/login'     => ['controller' => 'AuthController', 'action' => 'showLogin'],
-    '/signup'    => ['controller' => 'AuthController', 'action' => 'showSignup'],
+    '/'                 => ['controller' => 'HomeController', 'action' => 'index'],
+    '/login'            => ['controller' => 'AuthController', 'action' => 'showLogin'],
+    '/signup'           => ['controller' => 'AuthController', 'action' => 'showSignup'],
+    '/register-doctor'  => ['controller' => 'DoctorController', 'action' => 'showDocReg'],
+    '/submit-doctor'    => ['controller' => 'DoctorController', 'action' => 'recDoc'],
+    '/register-patient' => ['controller' => 'PatientController', 'action' => 'showPatReg'],
+    '/submit-patient'   => ['controller' => 'PatientController', 'action' => 'recPat'],
 ];
 
 $requestData = array_merge($_GET, $_POST);

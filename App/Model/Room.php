@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../../Abstract/Model.php';
+
 class Room extends Model {
 
     function __construct()
