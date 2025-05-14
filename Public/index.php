@@ -8,7 +8,7 @@ require_once __DIR__ . '/../App/Model/Room.php';
 require_once __DIR__ . '/../App/Controller/HomeController.php';
 
 
-$requestPath = trim(parse_url($_SERVER['REQUEST_ URI'], PHP_URL_PATH));
+$requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $routes = [
     '/'          => ['controller' => 'HomeController', 'action' => 'index'],
     '/login'     => ['controller' => 'AuthController', 'action' => 'showLogin'],
