@@ -16,6 +16,33 @@ class PatientController {
         exit();
     }
 
+    public function listPat($requestdata = []){
+        $p = new Patient();
+        $requestdata = array_merge($requestdata, $p->getAll());
+        
+        View::render('list-patient', $requestdata);
+    }
+
+    public function patByID($requestdata = []){
+        $p = new Patient();
+        $requestdata = $p->searchByID($requestdata['id']);
+
+        View::render('list-patient', $requestdata);
+    }
+
+    public function patByName($requestdata = []){
+        $p = new Patient();
+        $requestdata = $p->searchByName($requestdata['name']);
+
+        View::render('list-patient', $requestdata);
+    }
+
+    public function delPat($requestdata = []){
+        $p = new Patient();
+        $p->delete($requestdata['id']);
+
+        header('');
+    }
 }
 
 ?>
