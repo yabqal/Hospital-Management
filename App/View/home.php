@@ -19,11 +19,11 @@
       <hr>
     </div>
     <div class="choice-list">
-      <div class="list-item"><img src="../../Public/icons/profile-2.svg" alt="">Register patients and physicians</div>
-      <div class="list-item"><img src="../../Public/icons/paragraph.svg" alt="">Details of patients and physicians</div>
-      <div class="list-item"><img src="../../Public/icons/check-2.svg" alt="">Available Physicians</div>
-      <div class="list-item"><img src="../../Public/icons/calendar-2.svg" alt="">Schedule a physician meeting</div>
-      <div class="list-item"><img src="../../Public/icons/key-2.svg" alt="">View Rooms</div>
+      <div class="list-item"><img src="icons/profile-2.svg" alt="">Register patients and physicians</div>
+      <div class="list-item"><img src="icons/paragraph.svg" alt="">Details of patients and physicians</div>
+      <div class="list-item"><img src="icons/check-2.svg" alt="">Available Physicians</div>
+      <div class="list-item"><img src="icons/calendar-2.svg" alt="">Schedule a physician meeting</div>
+      <div class="list-item"><img src="icons/key-2.svg" alt="">View Rooms</div>
     </div>
   </div>
 </body>
