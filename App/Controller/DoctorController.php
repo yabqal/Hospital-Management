@@ -1,6 +1,6 @@
 <?php
 
-require_once DIR . '/../Model/Doctor.php';
+require_once __DIR__ . '/../Model/Doctor.php';
 
 class DoctorController {
     
@@ -12,7 +12,7 @@ class DoctorController {
         $d = new Doctor();
         $d->insert($requestdata);
 
-        header('locatiion: /doctors');
+        header('Locatiion: /doctors');
         exit();
     }
 
@@ -41,7 +41,8 @@ class DoctorController {
         $d = new Doctor();
         $d->delete($requestdata['id']);
 
-        header("");
+        header('Locatiion: /doctors');
+        exit();
     }
 
     public function availableDoc($requestdata = []){
@@ -49,6 +50,20 @@ class DoctorController {
         $requestdata = $d->getAvailable();
 
         View::render('list-doctor', $requestdata);
+    }
+
+    public function assignRoomDoc($requestdata = []){
+        $p = new Doctor();
+        $r = new Room();
+
+        if($r->roomAvail($requestdata['rid'])){
+            $r->roomTake($requestdata['rid']);
+            $p->assignRoom($requestdata);
+            header("Location: /doctors");
+        }
+        else{
+            //fallback, tell user room is taken
+        }
     }
 
 }

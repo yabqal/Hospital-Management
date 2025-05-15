@@ -19,4 +19,10 @@ class Patient extends Model{
                 );
     }
 
+    function assignRoom($data){
+        mysqli_query(static::$db,
+        "UPDATE " . $this->_table . " SET rid = " . $data['rid'] . "WHERE id = " . $data['id']
+        );
+    }
+
 }

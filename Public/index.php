@@ -27,6 +27,7 @@ $routes = [
     "/doctors/{$_POST['id']}"           => ['controller' => 'DoctorController', 'action' => 'availableDoc'],
     "/doctors/{$_POST['name']}"         => ['controller' => 'DoctorController', 'action' => 'docByName'],
     "/doctors/{$_POST['id']}"           => ['controller' => 'DoctorController', 'action' => 'delDoc'],
+    "/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
 
     '/register-patient'                 => ['controller' => 'PatientController', 'action' => 'showPatReg'],
     '/submit-patient'                   => ['controller' => 'PatientController', 'action' => 'recPat'],
@@ -34,9 +35,15 @@ $routes = [
     "/patients/{$_POST['id']}"          => ['controller' => 'PatientController', 'action' => 'patByID'],
     "/patients/{$_POST['name']}"        => ['controller' => 'PatientController', 'action' => 'patByName'],
     "/patients/{$_POST['id']}"          => ['controller' => 'PatientController', 'action' => 'delPat'],
+    "/patients/assign-room"             => ['controller' => 'PatientController', 'action' => 'assignRoomPat'],
 
     '/rooms'                            => ['controller' => 'RoomController', 'action' => 'listRoom'],
     "/rooms/{$_POST['id']}"             => ['controller' => 'RoomController', 'action' => 'delRoom'],
+
+
+    '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'],
+    '/submit-appointment'               => ['controller' => 'AppointmentController', 'action' => 'recApp'],
+    '/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
     
 ];
 
