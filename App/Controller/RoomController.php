@@ -12,6 +12,8 @@ class RoomController {
         $r = new Room();
         $r->delete($requestdata['id']);
 
-        header('');
+        header('Locatiion: /rooms');
+        exit();
     }
+
 }

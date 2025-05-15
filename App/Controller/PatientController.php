@@ -12,7 +12,7 @@ class PatientController {
         $p = new Patient();
         $p->insert($requestdata);
 
-        header('location: /Patients');
+        header('Location: /patients');
         exit();
     }
 
@@ -41,8 +41,26 @@ class PatientController {
         $p = new Patient();
         $p->delete($requestdata['id']);
 
-        header('');
+        header('Locatiion: /doctors');
+        exit();
     }
+
+    public function assignRoomPat($requestdata = []){
+        $p = new Patient();
+        $r = new Room();
+
+        if($r->roomAvail($requestdata['rid'])){
+            $r->roomTake($requestdata['rid']);
+            $p->assignRoom($requestdata);
+            header("Location: /patients");
+        }
+        else{
+            //fallback, tell user room is taken
+        }
+    }
+
+
+
 }
 
 ?>
