@@ -1,0 +1,166 @@
+html{
+    height: 100%;
+}    
+    
+body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #060D17;
+    font-family: sans-serif;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.main{
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #101823;
+    border-radius: 16px;
+    padding: 50px;
+    padding-block: 15px;
+    width: 55%;
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+}
+
+.main h1{
+    font-family: sans-serif;
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+.main > p{
+    max-width: 400px;
+    line-height: 25px;
+    font-family: sans-serif;
+    font-size: 1.25vw;
+    font-weight: 450;
+    margin-bottom: 50px;
+}
+
+.tasks-container{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
+.tasks-container > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    padding-block: 30px;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 200px) and (max-width: 576px){
+    .tasks-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100px;
+        background-color: yellow;
+    }
+
+    .tasks-container >*{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 20px;
+        padding-block: 30px;
+        border-radius: 16px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+        width: 30%;
+        box-sizing: border-box;
+    }
+}
+
+.tasks-container .task1{
+    color: #D13F32;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: #742D27;
+}
+
+.tasks-container .task2{
+    color: #155CBB;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: #0A2A55;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tasks-container .task3{
+    color: #00854B ;
+    font-weight: 800;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom left, #00854B, #001F11);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4) 2px 2px 6px rgba(0, 0, 0, 0.4);
+    background-color: #001F11;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 20%;
+    padding: 20px;
+    max-height: 500px;
+    /* background-color: yellow; */
+}
+
+form h3{
+    padding-left: 10px;
+}
+
+form input{
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #212C3B;
+    border: none;
+    color: #CDCDCD;
+}
+
+form button{
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #B3B3B3;
+    border: none;
+    color: black;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 800;
+    position: relative;
+    box-sizing: border-box;
+}
+
+form button::after{
+    content: url(../../Public/icons/login_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png);
+    position: absolute;
+    right: 75px;
+    bottom: 10px;
+    margin: 0px;
+}
+
+form button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
