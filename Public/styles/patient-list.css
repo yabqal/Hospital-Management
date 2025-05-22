@@ -1,0 +1,21 @@
+.title-button input{
+    background-color: #101823;
+    border-radius: 18px;
+    padding: 10px;
+    padding-inline: 18px;
+    border: 0;
+    box-sizing: border-box;
+    color: #A6ABB1;
+    width: 50vw
+}
+
+.title-button input::after{
+    content: url(../../Public/icons/search\ icon.png);
+    right: 18px;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

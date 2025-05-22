@@ -1,0 +1,80 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+.leave-btn{
+    background-color: #d13f32;
+    color: #fafafa;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition-duration: 0.4s;
+    margin-left: 5px;
+}
+
+.leave-btn:hover{
+    background-color: #ed3120;
+    color: white;
+    filter: drop-shadow(0 0 10px #ed3120);
+    cursor: pointer;
+}
+
+.patient-info{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
+
+.patient-info img{
+    height: 100%;
+    border-radius: 16px;
+}
+
+.patient-info .details{
+    line-height: 2vw;
+}
+
+.medication-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-block: 20px;
+}
+
+.description{
+    width: 60%;
+    font-weight: 600;
+}
+
+.description .description-text{
+    background-color: #101823;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 16px;
+    
+}
+
+.prev-meds{
+    width: 35%
+}
+
+.prev-meds .med-text{
+    background-color: #101823;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.actions{
+    display: flex;
+    gap: 10px;
+}
+
+.actions > *{
+    border-radius: 7px;
+    padding: 7px;
+    border: none;
+}
