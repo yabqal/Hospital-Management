@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient details</title>
+    <title>Patient List</title>
     <link rel="stylesheet" href="../../Public/styles/common.css"/>
     <link rel="stylesheet" href="../../Public/styles/register-patient.css"/>
     <link rel="stylesheet" href="../../Public/styles/patient-details.css"/>
@@ -14,7 +14,9 @@
     <div class="top-bar">
       <div class="title-button">
           <div class="title">Patient List</div>
-           <input type="search" name="searchpatient" placeholder="Search">
+          <div class="search-wrapper">
+            <input type="search" name="searchpatient" placeholder="Search">
+          </div>
             <div class="nav-btns">
               <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
               <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
@@ -58,5 +60,21 @@
         </div>
       </div>
     </div>
+    <script>
+        const searchinp = document.querySelector('input[name="searchpatient"]');
+        const patientlist = document.querySelectorAll(".list-item");
+
+        searchinp.addEventListener("input", function () {
+          const searchword = this.value.trim().toLowerCase();
+          patientlist.forEach(patient => {
+            const patientname = patient.querySelector("p").textContent.toLowerCase();
+            if(!patientname.includes(searchword)){
+              patient.style.display = "none";
+            }else{
+              patient.style.display = "";
+            }
+          })
+      });
+    </script>
 </body>
 </html>
