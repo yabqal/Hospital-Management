@@ -28,7 +28,7 @@
         <div class="section-title">Basic Details</div>
         <div class="input-group">
           <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName" required />
-          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" style="margin: 0px 24px;" required />
+          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" id="mName" style="margin: 0px 24px;" required />
           <input class="name-input inp" type="text" placeholder="Grand Father's Name" id="lName" name="lName" />
         </div>
 
@@ -47,7 +47,8 @@
           </select>
           </div>
           <input 
-            class="inp" 
+            class="inp"
+            id="phoneno" 
             type="tel" 
             name="phone" 
             placeholder="Phone Number" 
@@ -55,7 +56,7 @@
             title="Phone number must start with 09 or 07 and have 10 digits" 
             style="margin-left: 24px;"
             required />
-          <input class="inp" type="email" placeholder="Email (optional)" name="email" style="margin: 0px 24px;" />
+          <input class="inp" type="email" placeholder="Email (optional)" id="email" name="email" style="margin: 0px 24px;" />
           <input class="inp" type="text" placeholder="Hospital Card Number" name="cardNumber" required />
         </div>
 
@@ -63,7 +64,8 @@
         <div class="input-group emergency-inp-group">
           <input class="inp" type="text" placeholder="Emergency Contact Name" name="emergencyName" required />
           <input 
-            class="inp" 
+            class="inp"
+            id="emgtel" 
             type="tel" 
             name="emergencyPhone" 
             placeholder="Emergency Phone" 

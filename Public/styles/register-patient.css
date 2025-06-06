@@ -1,13 +1,14 @@
 .form-container{
-    padding: 32px 55px;
+    padding: 2.2vw 3.7vw;
     background-color: #101823;
     border-radius: 16px;
-    min-width: 524px;
+    min-width: 36.4vw;
 }
 
-.form-container form {
+.form-container form{
   display: flex;
   flex-direction: column;
+  min-width: 100%;
 }
 
 .section-title{
@@ -84,7 +85,7 @@
 }
 
 .txt-area{
-    width: 96%;
+    width: 95%;
     height: 240px;
     line-height: 28px;
     resize: none;
@@ -209,4 +210,34 @@ button[type=submit]:active{
 .submit-btn:hover::after{
     transform: translateX(4px) rotate(180deg);
     transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .input-group > *{
+        margin: 0px;
+        width: 90% !important;
+    }
+
+    .emergency-inp-group > *{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    #mName, #phoneno, #email, #emgtel{
+        margin: 0px !important;
+    }
+
+    .sex-input{
+        width: 100% !important;
+    }
+
+    .txt-area{
+        width: 88%;
+    }
 }
