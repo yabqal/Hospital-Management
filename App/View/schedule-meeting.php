@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Physician Meeting</title>
-    <link rel="stylesheet" href="../../Public/styles/common.css"/>
-    <link rel="stylesheet" href="../../Public/styles/register-patient.css"/>
-    <link rel="stylesheet" href="../../Public/styles/patient-details.css"/>
-    <link rel="stylesheet" href="../../Public/styles/schedule-meeting.css"/>
+    <link rel="stylesheet" href="/styles/common.css"/>
+    <link rel="stylesheet" href="/styles/register-patient.css"/>
+    <link rel="stylesheet" href="/styles/patient-details.css"/>
+    <link rel="stylesheet" href="/styles/schedule-meeting.css"/>
 </head>
 <body>
     <div class="page-container">
@@ -15,9 +15,9 @@
             <div class="title-button">
                 <div class="title">Schedule Patient Meeting</div>
                 <div class="nav-btns">
-                <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
-                <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
-                <div class="leave-btn"><img src="../../Public/icons/leave-3 1.png" alt=""></div>
+                <div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div>
+                <div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div>
+                <div class="leave-btn"><img src="/icons/leave-3 1.png" alt=""></div>
                 </div>
             </div>
         <hr />
