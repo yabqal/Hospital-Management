@@ -21,17 +21,37 @@
       </div>
       <hr />
     </div>
+    <?php
+    # to connect the db 
+      if (isset($_GET['id'])) {
+          $patientId = $_GET['id'];
+
+          $stmt = $conn->prepare("SELECT * FROM patients WHERE id = ?");
+          $stmt->bind_param("i", $patientId);
+          $stmt->execute();
+          $result = $stmt->get_result();
+          $patient = $result->fetch_assoc();
+
+          if (!$patient) {
+            echo "<p>Patient not found.</p>";
+            exit;
+          }
+      }else{
+          echo "<p>No patient ID specified.</p>";
+          exit;
+      }
+    ?>
     <div class="patient-info">
         <img src="" alt="patient image"/>
         <div class="details">
-            <p>Full Name: <span>Yousef Tilahun Yimer</span></p>
-            <p>Age: <span>20</span></p>
-            <p>Address: <span>Weltey, Oromia</span></p>
-            <p>Registration Date: <span>April 6, 2025</span></p>
+            <p>Full Name: <span><?php echo $patient['fName'] . ' ' . $patient['mName'] . ' ' . $patient['lName']; ?></span></p>
+            <p>Age: <span><?php echo $patient['age']; ?></span></p>
+            <p>Address: <span><?php echo $patient['address']; ?></span></p>
+            <p>Registration Date: <span><?php echo $patient['regDate']; ?></span></p>
             <div class="actions">
-                <button id="physician">Assign to Physician</button>
-                <button id="room">Assign to Room</button>
-                <button id="remove">Remove</button>
+                <button id="physicianto-<?php echo $patientId; ?>">Assign to Physician</button>
+                <button id="roomto-<?php echo $patientId; ?>">Assign to Room</button>
+                <button id="remove-<?php echo $patientId; ?>">Remove</button>
             </div>
         </div>
     </div>
@@ -39,13 +59,13 @@
         <div class="description">
             <p>Description: </p>
             <div class="description-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim, tortor nec imperdiet posuere, sem elit tempus urna, et porta libero massa vitae urna. Mauris suscipit hendrerit porta. Curabitur bibendum pharetra tortor a ultrices. Maecenas consequat vehicula risus, in congue lectus. Cras interdum felis est, nec efficitur neque tempor sed. Maecenas erat nibh, dictum sed felis quis, egestas convallis orci. Quisque tempus nisi et ultrices mattis. Nam mattis massa non diam consequat, sit amet commodo nisl placerat. Curabitur diam sapien, hendrerit ac nisi in, dictum laoreet tortor.</p>
+                <p><?php echo $patient['description']; ?></p>
             </div>
         </div>
         <div class="prev-meds">
             <p>Previous Medications: </p>
             <div class="med-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim, tortor nec imperdiet posuere, sem elit tempus urna, et porta libero massa vitae urna. Mauris suscipit hendrerit porta.</p>
+                <p><?php echo $patient['prevMeds']; ?></p>
             </div>
         </div>
     </div>

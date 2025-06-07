@@ -11,53 +11,38 @@
 </head>
 <body>
   <div class="page-container">
-    <div class="top-bar">
-      <div class="title-button">
+      <div class="top-bar">
+        <div class="title-button">
           <div class="title">Patient List</div>
           <div class="search-wrapper">
             <input type="search" name="searchpatient" placeholder="Search">
           </div>
-            <div class="nav-btns">
-              <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
-              <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
-              <div class="log-out-btn">Log Out</div>
-            </div>
+          <div class="nav-btns">
+            <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
+            <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
+            <div class="log-out-btn">Log Out</div>
           </div>
+        </div>
         <hr />
       </div>
       <div class="choice-list">
-        <div class="list-item">
-            <p>Abebe</p>
-            <div class="buttons">
-              <button id="physician">Assign to Physician</button>
-              <button id="room">Assign to Room</button>
-              <button id="remove">Remove</button>
-            </div>
-        </div>
-        <div class="list-item">
-            <p>Kebede</p>
-            <div class="buttons">
-              <button id="physician">Assign to Physician</button>
-              <button id="room">Assign to Room</button>
-              <button id="remove">Remove</button>
-            </div>
-        </div>
-        <div class="list-item">
-            <p>Ayele</p>
-            <div class="buttons">
-              <button id="physician">Assign to Physician</button>
-              <button id="room">Assign to Room</button>
-              <button id="remove">Remove</button>
-            </div>
-        </div>
-        <div class="list-item">
-            <p>Chala</p>
-            <div class="buttons">
-              <button id="physician">Assign to Physician</button>
-              <button id="room">Assign to Room</button>
-              <button id="remove">Remove</button>
-            </div>
-        </div>
+        <?php 
+        foreach($data as $row){
+
+          if(!isset($row['fName'])) continue;
+          
+          echo  '<div class="list-item">' .
+                  '<a href="patient-details.php?id=' . $row['id'] . '">' .
+                  '<p id="pname">' . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] . '</p>' .
+                  '</a>' .
+                  '<div class="buttons">'.
+                    '<button id="physicianto-' . $row['id'].'">Assign to Physician</button>' .
+                    '<button id="roomto-' . $row['id'].'">Assign to Room</button>' .
+                    '<button id="remove-' . $row['id'].'">Remove</button>' .
+                  '</div>' .
+                '</div>';
+        }
+        ?>
       </div>
     </div>
     <script>

@@ -19,8 +19,8 @@
       <hr>
     </div>
     <div class="choice-list">
-      <div class="list-item"><img src="icons/profile-2.svg" alt="">Register patients and physicians</div>
-      <div class="list-item"><img src="icons/paragraph.svg" alt="">Details of patients and physicians</div>
+      <a href="./option.php"><div class="list-item"><img src="icons/profile-2.svg" alt="">Register patients and physicians</div></a>
+      <a href="./patient-list.php"><div class="list-item"><img src="icons/paragraph.svg" alt="">Details of patients and physicians</div></a>
       <div class="list-item"><img src="icons/check-2.svg" alt="">Available Physicians</div>
       <div class="list-item"><img src="icons/calendar-2.svg" alt="">Schedule a physician meeting</div>
       <div class="list-item"><img src="icons/key-2.svg" alt="">View Rooms</div>
