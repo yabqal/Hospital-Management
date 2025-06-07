@@ -7,6 +7,7 @@ require_once __DIR__ . '/../App/Model/Patient.php';
 require_once __DIR__ . '/../App/Model/Room.php';
 require_once __DIR__ . '/../App/Controller/HomeController.php';
 require_once __DIR__ . '/../App/Controller/DoctorController.php';
+require_once __DIR__ . '/../App/Controller/PatientController.php';
 
 if(!isset($_POST['id']) || !isset($_POST['name'])){
     $_POST['id'] = '0';
@@ -14,6 +15,16 @@ if(!isset($_POST['id']) || !isset($_POST['name'])){
 }
 
 $requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+if($requestPath == '/register-choice'){
+    View::render("register-choice");
+    exit;
+}
+if($requestPath == '/details-choice'){
+    View::render("details-choice");
+    exit;
+}
+
 $routes = [
     '/'                                 => ['controller' => 'HomeController', 'action' => 'index'],
 
