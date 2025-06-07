@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../Abstract/Model.php';
 class Doctor extends Model{
 
     function __construct(){
-        parent::__construct("Doctors");
+        parent::__construct("doctors");
     }
 
     function getAll(){

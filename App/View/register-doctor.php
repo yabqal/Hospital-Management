@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../../Public/styles/common.css" />
-  <link rel="stylesheet" href="../../Public/styles/register-patient.css" />
-  <link rel="stylesheet" href="../../Public/styles/register-doctor.css"/>
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="stylesheet" href="/styles/register-patient.css" />
+  <link rel="stylesheet" href="/styles/register-doctor.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
@@ -17,8 +17,8 @@
       <div class="title-button">
         <div class="title">Register Doctor</div>
         <div class="nav-btns">
-          <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
-          <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
+          <div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div>
+          <div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div>
           <div class="log-out-btn">Log Out</div>
         </div>
       </div>
@@ -26,11 +26,11 @@
     </div>
 
     <div class="form-container">
-      <form action="/submit-doctor" method="POST">
+      <form action="/submit-doctor" method="POST" enctype="multipart/form-data">
         <div class="section-title">Basic Details</div>
         <div class="input-group">
-          <input class="name-input inp" type="text" placeholder="First Name" name="firstName" required />
-          <input class="name-input inp" type="text" placeholder="Last Name" name="lastName" style="margin: 0px 24px;" required />
+          <input class="name-input inp" type="text" placeholder="First Name" name="fName" required />
+          <input class="name-input inp" type="text" placeholder="Last Name" name="lName" style="margin: 0px 24px;" required />
           <input class="name-input inp" type="text" placeholder="Specialization" name="specialization" required />
         </div>
 
@@ -61,6 +61,7 @@
 
         <div class="input-group">
           <input class="inp date-input" type="date" name="startDate" placeholder="Start Date" required />
+          <!-- make sure the format/pattern is followed? -->
           <input class="inp wrkhrs" type="text" name="workingHours" placeholder="Working Hours (e.g. 9AM - 5PM)" required />
         </div>
 
@@ -68,7 +69,7 @@
         <textarea class="inp txt-area" name="description" placeholder="Notes or Description (optional)"></textarea>
 
         <div style="text-align: right; margin-top: 24px;">
-          <button type="submit" class="submit-btn">Register</button>
+          <input type="submit" class="submit-btn" value="Register">
         </div>
       </form>
     </div>

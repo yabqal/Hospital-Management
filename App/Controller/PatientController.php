@@ -8,7 +8,34 @@ class PatientController {
         View::render('register-patient');
     }
 
-    public function recPat($requestdata = []){
+    public function recPat($requestdata = [], $files = []){
+        unset($requestdata['submit-patient']);
+
+        //do we even need these two lines now that it was fixed from index.php?
+        if(isset($requestdata['name']))
+        unset($requestdata['name']);
+
+        if(isset($requestdata['id']))
+        unset($requestdata['id']);
+
+        if(isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
+            $imgTempPath = $files['photo']['tmp_name'];
+            $imgName = basename($files['photo']['name']);
+            $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+
+            $newImageName = uniqid("img_")  . "." . $imgExt;
+            $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
+
+            move_uploaded_file($imgTempPath, $uploadPath);
+
+            $requestdata['photo'] = $newImageName;
+        }
+        else {
+            $requestdata['photo'] = null;
+        }
+
+        echo $requestdata['photo'] . "hi";
+        
         $p = new Patient();
         $p->insert($requestdata);
 
@@ -21,6 +48,13 @@ class PatientController {
         $requestdata = array_merge($requestdata, $p->getAll());
         
         View::render('list-patient', $requestdata);
+    }
+
+    public function detailPat($requestdata = []){
+        $p = new Patient();
+        $requestdata = $p->searchByID($requestdata['id'])[0];
+
+        View::render('details-patient', $requestdata);
     }
 
     public function patByID($requestdata = []){
@@ -38,10 +72,10 @@ class PatientController {
     }
 
     public function delPat($requestdata = []){
+        //also delete the associated file alongside it ig
         $p = new Patient();
         $p->delete($requestdata['id']);
-
-        header('Locatiion: /doctors');
+        header('Location: /patients');
         exit();
     }
 
@@ -53,6 +87,7 @@ class PatientController {
             $r->roomTake($requestdata['rid']);
             $p->assignRoom($requestdata);
             header("Location: /patients");
+            exit();
         }
         else{
             //fallback, tell user room is taken

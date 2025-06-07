@@ -8,9 +8,12 @@ abstract class Model{
 
     public function __construct($tableName){
         if(static::$db === null){
-            $db = mysqli_connect("localhost","root","","hospital-mangement");
-            $db->set_charset('utf8mb4');
+            static::$db = mysqli_connect("localhost","root","","hospital-mangement") or die("Noooooooooo");
+            static::$db->set_charset('utf8mb4');
+            
         }
+
+        
 
         $this->_table = $tableName;
         
@@ -19,18 +22,23 @@ abstract class Model{
     abstract function getAll();
 
     function insert($data){
-        $fields = array_keys($data);
-        //sanitize here?
-        $values = array_values($data);
+        
+        $fields = array_map(function($field) {
+        return "`" . $field . "`";
+        }, array_keys($data));
+
+        $values = array_map(function($value) {
+            return "'" . mysqli_real_escape_string(static::$db, $value) . "'";
+        }, array_values($data));
 
         mysqli_query(static::$db, 
-                    "INSERT INTO " . $this->_table . " (" . implode(",", $fields) . " )" . " VALUES( " . implode("," , $values) . ")"
+                    "INSERT INTO `" . $this->_table . "` (" . implode(",", $fields) . " )" . " VALUES( " . implode("," , $values) . ")"
                     );
     }
 
     function delete($id){
 
-        mysqli_query(static::$db, 
+        echo mysqli_query(static::$db, 
                     "DELETE FROM " . $this->_table . " WHERE id = " . $id
                     );
     }
@@ -38,9 +46,8 @@ abstract class Model{
     function searchByID($id){
         return mysqli_fetch_all(
                     mysqli_query(static::$db,
-                    "SELECT * FROM " . $this->_table . " WHERE id = " . $id
-                    )
-                );
+                    "SELECT * FROM " . $this->_table . " WHERE id = " . $id)
+                    , MYSQLI_ASSOC);
     }
 
 }

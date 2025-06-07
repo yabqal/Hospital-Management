@@ -11,6 +11,7 @@
   <title>Register Patient</title>
 </head>
 <body>
+</form>
   <div class="page-container">
     <div class="top-bar">
       <div class="title-button">
@@ -24,7 +25,7 @@
       <hr />
     </div>
     <div class="form-container">
-      <form action="/submit-patient" method="POST">
+      <form action="/submit-patient" method="POST" enctype="multipart/form-data">
         <div class="section-title">Basic Details</div>
         <div class="input-group">
           <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName" required />
@@ -33,9 +34,9 @@
         </div>
 
         <div class="input-group">
-          <input class="inp age-input" type="number" min="0" placeholder="Age">
-          <input class="inp add-input" type="text" placeholder="Address">
-          <input class="inp date-input" type="date" placeholder="Date">
+          <input class="inp age-input" type="number" min="0" placeholder="Age" name="age">
+          <input class="inp add-input" type="text" placeholder="Address" name="address">
+          <input class="inp date-input" type="date" placeholder="Date" name="date">
         </div>
 
         <div class="input-group equal-inp">
@@ -78,7 +79,7 @@
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
         <div class="photo-and-btn">
           <input type="file" name="photo" id="photo">
-          <button type="submit" class="submit-btn">Register</button>
+          <input type="submit" class="submit-btn" value="Register">
         </div>
       </form>
     </div>

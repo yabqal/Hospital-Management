@@ -9,17 +9,18 @@ class DoctorController {
     }
 
     public function recDoc($requestdata = []){
+        if(isset($requestdata['submit-doctor']))
+        unset($requestdata['submit-doctor']);
         $d = new Doctor();
         $d->insert($requestdata);
 
-        header('Locatiion: /doctors');
+        header('Location: /doctors');
         exit();
     }
 
     public function listDoc($requestdata = []){
         $d = new Doctor();
         $requestdata = array_merge($requestdata, $d->getAll());
-        
         View::render('list-doctor', $requestdata);
     }
 
@@ -41,7 +42,7 @@ class DoctorController {
         $d = new Doctor();
         $d->delete($requestdata['id']);
 
-        header('Locatiion: /doctors');
+        header('Location: /doctors');
         exit();
     }
 
