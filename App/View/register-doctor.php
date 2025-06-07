@@ -17,8 +17,8 @@
       <div class="title-button">
         <div class="title">Register Doctor</div>
         <div class="nav-btns">
-          <div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div>
-          <div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div>
+          <a href="/register-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
+          <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
           <div class="log-out-btn">Log Out</div>
         </div>
       </div>
@@ -68,7 +68,8 @@
         <div class="section-title" style="margin-top: 48px;">Additional Info</div>
         <textarea class="inp txt-area" name="description" placeholder="Notes or Description (optional)"></textarea>
 
-        <div style="text-align: right; margin-top: 24px;">
+        <div class="photo-and-btn">
+          <div></div>
           <input type="submit" class="submit-btn" value="Register">
         </div>
       </form>

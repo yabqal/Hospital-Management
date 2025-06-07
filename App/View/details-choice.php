@@ -14,16 +14,16 @@
     <div class="top-bar">
       <div class="title-button">
         <div class="title">Welcome, Choose Action</div>
-        <div class="log-out-btn">Log Out</div>
+        <div class="nav-btns">
+          <a href="/"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
+          <div class="log-out-btn">Log Out</div>
+        </div>
       </div>
       <hr>
     </div>
     <div class="choice-list">
-      <a href="/register-choice"><div class="list-item"><img src="/icons/profile-2.svg" alt="">Register patients and physicians</div></a>
-      <a href="/details-choice"><div class="list-item"><img src="/icons/paragraph.svg" alt="">Details of patients and physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/check-2.svg" alt="">Available Physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/key-2.svg" alt="">View Rooms</div></a>
+      <a href="/patient-list"><div class="list-item"><img src="icons/paragraph.svg" alt="">Patient Details</div></a>
+      <a href=""><div class="list-item"><img src="icons/paragraph.svg" alt="">Physician Details</div></a>
     </div>
   </div>
 </body>

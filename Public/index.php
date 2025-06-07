@@ -20,6 +20,16 @@ require_once __DIR__ . '/../App/Controller/PatientController.php';
 // Update patient information, room information doctor information,
 //add (single)patient details, same for the others
 $requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+if($requestPath == '/register-choice'){
+    View::render("register-choice");
+    exit;
+}
+if($requestPath == '/details-choice'){
+    View::render("details-choice");
+    exit;
+}
+
 $routes = [
     '/'                                 => ['controller' => 'HomeController', 'action' => 'index'],
 

@@ -18,7 +18,7 @@
     <label for="diagnosis">Diagnosis:</label>
     <input type="text" id="diagnosis" name="diagnosis" required /><br/>
 
-    <button type="submit">Submit</button>
+    <input type="submit" name="submit" value="Submit"/>
   </form>
 </body>
 </html>

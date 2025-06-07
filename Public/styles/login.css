@@ -95,6 +95,11 @@ body{
         gap: 20px;
     }
 
+    .main > p{
+        max-width: 75%;
+        font-size: 10px;
+    }
+
     .tasks-container >*{
         min-width: 100% !important;
         display: flex;
@@ -158,6 +163,21 @@ form input{
     background-color: #212C3B;
     border: none;
     color: #CDCDCD;
+}
+
+form input::placeholder{
+    font-weight: 500;
+    color: #bcbcbc;
+}    
+
+form input:hover{
+    border: 1px solid rgba(255, 255, 255, 0.164);
+    outline: none;
+}
+
+form input:active{
+    border: 1px solid rgba(255, 255, 255, 0.164);
+    outline: none;
 }
 
 form button{

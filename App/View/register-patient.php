@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../../Public/styles/register-patient.css" />
-  <link rel="stylesheet" href="../../Public/styles/common.css" />
+  <link rel="stylesheet" href="/styles/register-patient.css" />
+  <link rel="stylesheet" href="/styles/common.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
@@ -17,8 +17,8 @@
       <div class="title-button">
         <div class="title">Register Patient</div>
         <div class="nav-btns">
-          <div class="back-btn"><img src="../../Public/icons/arrow-left.svg" alt="" /></div>
-          <div class="home-btn"><img src="../../Public/icons/home-2.svg" alt="" /></div>
+          <a href="/register-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
+          <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
           <div class="log-out-btn">Log Out</div>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="section-title">Basic Details</div>
         <div class="input-group">
           <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName" required />
-          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" style="margin: 0px 24px;" required />
+          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" id="mName" style="margin: 0px 24px;" required />
           <input class="name-input inp" type="text" placeholder="Grand Father's Name" id="lName" name="lName" />
         </div>
 
@@ -48,7 +48,8 @@
           </select>
           </div>
           <input 
-            class="inp" 
+            class="inp"
+            id="phoneno" 
             type="tel" 
             name="phone" 
             placeholder="Phone Number" 
@@ -56,7 +57,7 @@
             title="Phone number must start with 09 or 07 and have 10 digits" 
             style="margin-left: 24px;"
             required />
-          <input class="inp" type="email" placeholder="Email (optional)" name="email" style="margin: 0px 24px;" />
+          <input class="inp" type="email" placeholder="Email (optional)" id="email" name="email" style="margin: 0px 24px;" />
           <input class="inp" type="text" placeholder="Hospital Card Number" name="cardNumber" required />
         </div>
 
@@ -64,7 +65,8 @@
         <div class="input-group emergency-inp-group">
           <input class="inp" type="text" placeholder="Emergency Contact Name" name="emergencyName" required />
           <input 
-            class="inp" 
+            class="inp"
+            id="emgtel" 
             type="tel" 
             name="emergencyPhone" 
             placeholder="Emergency Phone" 
