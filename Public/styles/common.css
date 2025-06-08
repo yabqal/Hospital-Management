@@ -33,6 +33,10 @@ hr{
     margin-bottom: 16px;
 }
 
+.title{
+    margin-right: 12px;
+}
+
 .nav-btns{
     display: flex;
     justify-content: space-between;

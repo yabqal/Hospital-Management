@@ -7,11 +7,13 @@
     box-sizing: border-box;
     color: #A6ABB1;
     width: 47vw;
-    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.4);
+    border: 1px solid transparent;
+    transition-duration: 0.2s;
 }
 
 .search-wrapper input::placeholder{
     font-weight: 500;
+    font-size: 16px;
     color: #bcbcbc;
 }
 
@@ -19,13 +21,98 @@
 
 } */
 
-.list-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .search-wrapper input:hover{
     border: 1px solid rgba(255, 255, 255, 0.164);
     outline: none;
+}
+
+.search-wrapper input:active{
+    border: 1px solid rgba(255, 255, 255, 0.164);
+    outline: none;
+}
+
+.search-wrapper input:focus{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.601);
+    border: 1px solid rgba(255, 255, 255, 0.164);
+    outline: none;
+}
+
+.list-item{
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 0px 20px;
+}
+
+.buttons-container{
+    display: flex;
+    column-gap: 8px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin: 8px 0px;
+    color: #cfd5d5;
+    transition-duration: 0.2s;
+}
+
+.button img{
+    margin: 0px;
+}
+
+.assign-physician{
+    background-color: #0d2e2b;
+    border: 2px solid transparent;
+}
+
+.assign-room{
+    background-color: #112541;
+    border: 2px solid transparent;
+}
+
+.remove{
+    background-color: #372026;
+    border: 2px solid transparent;
+}
+
+.assign-physician:hover{
+    border: 2px solid #00854bc0;
+}
+
+.assign-room:hover{
+    border: 2px solid #155CBBc0;
+}
+
+.remove:hover{
+    border: 2px solid #D13F32c0;
+}
+
+.assign-physician{
+    background-color: #0d2e2b;
+}
+
+.assign-room{
+    background-color: #112541;
+}
+
+.remove{
+    background-color: #372026;
+}
+
+.assign-physician img{
+    filter: brightness(0) invert(27%) sepia(85%) saturate(1866%) hue-rotate(139deg) brightness(90%) contrast(101%);
+}
+
+.assign-room img{
+    filter: brightness(0) invert(27%) sepia(24%) saturate(4309%) hue-rotate(192deg) brightness(106%) contrast(93%);
+}
+
+.remove img{
+    filter: brightness(0) invert(33%) sepia(28%) saturate(3665%) hue-rotate(337deg) brightness(92%) contrast(92%);
 }
