@@ -8,12 +8,10 @@ abstract class Model{
 
     public function __construct($tableName){
         if(static::$db === null){
-            static::$db = mysqli_connect("localhost","root","","hospital-mangement") or die("Noooooooooo");
+            static::$db = mysqli_connect("localhost","root","password","hospital-mangement") or die("Noooooooooo");
             static::$db->set_charset('utf8mb4');
             
         }
-
-        
 
         $this->_table = $tableName;
         

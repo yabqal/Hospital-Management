@@ -29,6 +29,10 @@ if($requestPath == '/details-choice'){
     View::render("details-choice");
     exit;
 }
+if($requestPath == '/patient-list'){
+    View::render("patient-list");
+    exit;
+}
 
 $routes = [
     '/'                                 => ['controller' => 'HomeController', 'action' => 'index'],
