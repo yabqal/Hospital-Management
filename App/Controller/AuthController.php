@@ -15,8 +15,10 @@ class AuthController{
       die("Connection failed: " . $conn->connect_error);
     }
 
-    if($conn->query("SELECT * FROM admins WHERE username = '$username'") === ''){
-      die("User not found!");
+    if($conn->query("SELECT * FROM admins WHERE username = '$username'")->fetch_assoc() == null){
+      $error = "User not found!";
+      View::render('login', $error);
+      exit();
     }
     $users = $conn->query("SELECT * FROM admins WHERE username = '$username'");
     $user = $users->fetch_assoc();
