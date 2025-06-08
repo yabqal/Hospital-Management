@@ -24,6 +24,13 @@ class DoctorController {
         View::render('list-doctor', $requestdata);
     }
 
+    public function detailDoc($requestdata = []){
+        $d = new Doctor();
+        $requestdata = $d->searchByID($requestdata['id'])[0];
+
+        View::render("details-doctor", $requestdata);
+    }
+
     public function docByID($requestdata = []){
         $d = new Doctor();
         $requestdata = $d->searchByID($requestdata['id']);
@@ -65,6 +72,14 @@ class DoctorController {
         else{
             //fallback, tell user room is taken
         }
+    }
+
+    public function updateDoc($requestdata){
+        $d = new Doctor();
+        $d->update($requestdata);
+
+        header('Location: /doctor?id=' . $requestdata['id']);
+        exit();
     }
 
 }

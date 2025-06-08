@@ -36,9 +36,28 @@ abstract class Model{
                     );
     }
 
+    function update($data){
+
+        $id = mysqli_real_escape_string(static::$db, $data['id']);
+        unset($data['id']);
+
+        $fields = array_keys($data);
+        $body = [];
+
+        foreach ($fields as $field) {
+            $escapedField = "`" . $field . "`";
+            $escapedValue = "'" . mysqli_real_escape_string(static::$db, $data[$field]) . "'";
+            $body[] = $escapedField . " = " . $escapedValue;
+        }
+
+        $query = "UPDATE `" . $this->_table . "` SET " . implode(', ', $body) . " WHERE `id` = '" . $id . "'";
+
+        mysqli_query(static::$db, $query);
+    }
+
     function delete($id){
 
-        echo mysqli_query(static::$db, 
+        mysqli_query(static::$db, 
                     "DELETE FROM " . $this->_table . " WHERE id = " . $id
                     );
     }

@@ -94,7 +94,14 @@ class PatientController {
         }
     }
 
+    //you need to handle pic update separately
+    public function updatePat($requestdata){
+        $p = new Patient();
+        $p->update($requestdata);
 
+        header('Location: /patient?id=' . $requestdata['id']);
+        exit();
+    }
 
 }
 

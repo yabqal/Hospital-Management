@@ -15,23 +15,22 @@ require_once __DIR__ . '/../App/Controller/PatientController.php';
 //     $_POST['name'] = '0';
 // }
 
-//fix sex, doesnt get recorded correctly
+//fix sex, doesnt get recorded correctly, current format $data[sex] = "male" or "female"
 
-// Update patient information, room information doctor information,
-//add (single)patient details, same for the others
+//for doc add available to table or something?
+// Update patient information(handle photos), room information
+//for room update we might need some additional things depending on whether or not we decide to add new table or not
+
+//show update page for all
+
+//add (single)room details
+// how is doctor availability handled?
 $requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-if($requestPath == '/register-choice'){
-    View::render("register-choice");
-    exit;
-}
-if($requestPath == '/details-choice'){
-    View::render("details-choice");
-    exit;
-}
-
 $routes = [
-    '/'                                 => ['controller' => 'HomeController', 'action' => 'index'],
+    '/'                                 => ['controller' => 'HomeController', 'action' => 'index'], //tested
+    '/register-choice'                  => ['controller' => 'HomeController', 'action' => 'register'], //tested
+    '/details-choice'                   => ['controller' => 'HomeController', 'action' => 'details'], //tested
 
 
     '/login'                            => ['controller' => 'AuthController', 'action' => 'showLogin'],
@@ -46,6 +45,9 @@ $routes = [
     //"/doctors/{$_POST['name']}"         => ['controller' => 'DoctorController', 'action' => 'docByName'],
     "/doctors/remove"                   => ['controller' => 'DoctorController', 'action' => 'delDoc'], // tested
     "/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
+    "/doctor"                           => ['controller' => 'DoctorController', 'action' => 'detailDoc'],
+    //for the action not the update page
+    '/doctor/update'                    => ['controller' => 'DoctorController', 'action' => 'updateDoc'],
 
 
     '/register-patient'                 => ['controller' => 'PatientController', 'action' => 'showPatReg'], // tested
@@ -59,17 +61,24 @@ $routes = [
 
     "/patients/remove"                  => ['controller' => 'PatientController', 'action' => 'delPat'], //tested
     "/patients/assign-room"             => ['controller' => 'PatientController', 'action' => 'assignRoomPat'],
+    'patient/update'                    => ['controller' => 'PatientController', 'action' => 'updatePat'],
 
 
-    //add register and submit room? and avaiable rooms and delete room
+    //avaiable rooms, add take and leave room and related things???
+    '/register-room'                    => ['controller' => 'RoomController', 'action' => 'showRoomReg'],
+    '/submit-room'                      => ['controller' => 'RoomController', 'action' => 'recRoom'],
     '/rooms'                            => ['controller' => 'RoomController', 'action' => 'listRoom'],
+    '/rooms/remove'                     => ['controller' => 'RoomController', 'action' => 'delRoom'],
     //"/rooms/{$_POST['id']}"             => ['controller' => 'RoomController', 'action' => 'delRoom'],
+    '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
 
 
-    //add delete appointment?
     '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'],
     '/submit-appointment'               => ['controller' => 'AppointmentController', 'action' => 'recApp'],
     '/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
+    '/appointments/remove'              => ['controller' => 'AppointmentController', 'action' => 'delApp'],
+    '/appointment'                      => ['controller' => 'AppointmentController', 'action' => 'detailApp'],
+    '/appointment/update'               => ['controller' => 'AppointmentController', 'action' => 'updateApp'],
     
 ];
 

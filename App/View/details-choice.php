@@ -22,7 +22,7 @@
       <hr>
     </div>
     <div class="choice-list">
-      <a href="/patient-list"><div class="list-item"><img src="icons/paragraph.svg" alt="">Patient Details</div></a>
+      <a href="/patients"><div class="list-item"><img src="icons/paragraph.svg" alt="">Patient Details</div></a>
       <a href=""><div class="list-item"><img src="icons/paragraph.svg" alt="">Physician Details</div></a>
     </div>
   </div>
