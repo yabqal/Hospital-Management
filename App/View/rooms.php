@@ -24,6 +24,7 @@
         <hr />
       </div>
     <h2>Available Rooms</h2>
+    <!-- Just an example -->
     <div class="available-rooms">
       <div class="room-card">
         <div class="room-text">ROOM</div>
@@ -31,6 +32,7 @@
       </div>
     </div>
     <h2>Occupied Rooms</h2>
+    <!-- Just an example -->
     <div class="occupied-rooms">
       <div class="room-card">
         <div class="room-text">ROOM</div>

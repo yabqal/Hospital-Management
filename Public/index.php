@@ -8,6 +8,7 @@ require_once __DIR__ . '/../App/Model/Room.php';
 require_once __DIR__ . '/../App/Controller/HomeController.php';
 require_once __DIR__ . '/../App/Controller/DoctorController.php';
 require_once __DIR__ . '/../App/Controller/PatientController.php';
+require_once __DIR__ . '/../App/Controller/AuthController.php';
 
 //?????????????? ig its here cuz we access the id and name in the paths???
 // if(!isset($_POST['id']) || !isset($_POST['name'])){
@@ -39,6 +40,7 @@ $routes = [
 
 
     '/login'                            => ['controller' => 'AuthController', 'action' => 'showLogin'],
+    '/login-auth'                       => ['controller' => 'AuthController', 'action' => 'authLogin'],
     '/signup'                           => ['controller' => 'AuthController', 'action' => 'showSignup'],
 
 
