@@ -17,7 +17,6 @@ require_once __DIR__ . '/../App/Controller/PatientController.php';
 
 //fix sex, doesnt get recorded correctly, current format $data[sex] = "male" or "female"
 
-//for doc add available to table or something?
 // Update patient information(handle photos), room information
 //for room update we might need some additional things depending on whether or not we decide to add new table or not
 
