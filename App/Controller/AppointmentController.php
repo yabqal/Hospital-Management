@@ -58,6 +58,11 @@ class AppointmentController{
         exit();
     }
     
+    public function showAppUpdate($requestdata = []){
+
+        View::render('appointment-update');
+    }
+
 }
 
 ?>

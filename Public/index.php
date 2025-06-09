@@ -16,15 +16,8 @@ require_once __DIR__ . '/../App/Controller/AuthController.php';
 //     $_POST['name'] = '0';
 // }
 
-//fix sex, doesnt get recorded correctly, current format $data[sex] = "male" or "female"
+// Update patient information(handle photos)
 
-// Update patient information(handle photos), room information
-//for room update we might need some additional things depending on whether or not we decide to add new table or not
-
-//show update page for all
-
-//add (single)room details
-// how is doctor availability handled?
 $requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 $routes = [
@@ -45,10 +38,11 @@ $routes = [
     "/doctors/available"                => ['controller' => 'DoctorController', 'action' => 'availableDoc'],
     //"/doctors/{$_POST['name']}"         => ['controller' => 'DoctorController', 'action' => 'docByName'],
     "/doctors/remove"                   => ['controller' => 'DoctorController', 'action' => 'delDoc'], // tested
-    "/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
+    //"/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
     "/doctor"                           => ['controller' => 'DoctorController', 'action' => 'detailDoc'],
-    //for the action not the update page
+    'doctor/update-info'                => ['controller' => 'DoctorController', 'action' => 'showDocUpdate'],
     '/doctor/update'                    => ['controller' => 'DoctorController', 'action' => 'updateDoc'],
+    '/doctor/update/available'          => ['controller' => 'DoctorController', 'action' => 'updateAvailDoc'],
 
 
     '/register-patient'                 => ['controller' => 'PatientController', 'action' => 'showPatReg'], // tested
@@ -62,7 +56,8 @@ $routes = [
 
     "/patients/remove"                  => ['controller' => 'PatientController', 'action' => 'delPat'], //tested
     "/patients/assign-room"             => ['controller' => 'PatientController', 'action' => 'assignRoomPat'],
-    'patient/update'                    => ['controller' => 'PatientController', 'action' => 'updatePat'],
+    '/patient/update-info'              => ['controller' => 'PatientController', 'action' => 'showPatUpdate'],
+    '/patient/update'                   => ['controller' => 'PatientController', 'action' => 'updatePat'],
 
 
     //avaiable rooms, add take and leave room and related things???
@@ -71,6 +66,8 @@ $routes = [
     '/rooms'                            => ['controller' => 'RoomController', 'action' => 'listRoom'],
     '/rooms/remove'                     => ['controller' => 'RoomController', 'action' => 'delRoom'],
     //"/rooms/{$_POST['id']}"             => ['controller' => 'RoomController', 'action' => 'delRoom'],
+    '/room'                             => ['controller' => 'RoomController', 'acion' => 'detailRoom'],
+    '/room/update-info'                 => ['controller' => 'RoomController', 'action' => 'showRoomUpdate'],
     '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
 
 
@@ -79,6 +76,7 @@ $routes = [
     '/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
     '/appointments/remove'              => ['controller' => 'AppointmentController', 'action' => 'delApp'],
     '/appointment'                      => ['controller' => 'AppointmentController', 'action' => 'detailApp'],
+    '/appointment/update-info'          => ['controller' => 'AppointmentController', 'action' => 'showAppUpdate'],
     '/appointment/update'               => ['controller' => 'AppointmentController', 'action' => 'updateApp'],
     
 ];

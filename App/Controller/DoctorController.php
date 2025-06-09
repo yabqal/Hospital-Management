@@ -1,8 +1,9 @@
 <?php
 
+
 require_once __DIR__ . '/../Model/Doctor.php';
 
-class DoctorController {
+class DoctorController{
     
     public function showDocReg($requestdata = []){
         View::render('register-doctor');
@@ -60,7 +61,7 @@ class DoctorController {
         View::render('list-doctor', $requestdata);
     }
 
-    public function assignRoomDoc($requestdata = []){
+    private function assignRoomDoc($requestdata = []){
         $p = new Doctor();
         $r = new Room();
 
@@ -80,6 +81,19 @@ class DoctorController {
 
         header('Location: /doctor?id=' . $requestdata['id']);
         exit();
+    }
+
+    public function updateAvailDoc($requestdata){
+        $d = new Doctor();
+        $requestdata['available'] = !$requestdata['available'];
+        $d->update($requestdata);
+
+        header('Location: /doctor?id=' . $requestdata['id']);
+        exit();
+    }
+
+    public function showDocUpdate($requestdata = []){
+        View::render('doctor-update');
     }
 
 }

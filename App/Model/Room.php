@@ -19,7 +19,7 @@ class Room extends Model {
                 static::$db,
                 "SELECT * FROM " . $this->_table . " WHERE id = " . $id
             )
-            )['id'];
+            )[0]['taken'];
     }
 
     function roomTake($id){

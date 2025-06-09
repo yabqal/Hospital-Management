@@ -1,6 +1,6 @@
 <?php
-class RoomController {
-    //id, p or d or o?, name, available and id of taker, floor maybe have another table?
+class RoomController extends Controller{
+    //id, taken, pid
     public function listRoom($requestdata = []){
         $r = new Room();
         $requestdata = array_merge($requestdata, $r->getAll());
@@ -28,13 +28,24 @@ class RoomController {
         exit();
     }
 
-    //Need this???
     public function updateRoom($requestdata){
         $r = new Room();
         $r->update($requestdata);
 
         header('Location: /room?id=' . $requestdata['id']);
         exit();
+    }
+
+    public function showRoomUpdate($requestdata = []){
+
+        View::render("room-update");
+    }
+
+    public function detailRoom($requestdata) {
+        $r = new Room();
+        $requestdata = $r->searchByID($requestdata['id']);
+
+        View::render('room-detail', $requestdata);
     }
 
 }

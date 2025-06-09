@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../Model/Patient.php';
 
-class PatientController {
+class PatientController{
 
     public function showPatReg($requestdata = []){
         View::render('register-patient');
@@ -74,11 +74,14 @@ class PatientController {
     public function delPat($requestdata = []){
         //also delete the associated file alongside it ig
         $p = new Patient();
+        $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
+        unlink('/uploads/' . $pic);
         $p->delete($requestdata['id']);
         header('Location: /patients');
         exit();
     }
 
+    // let this be handled by room manager
     public function assignRoomPat($requestdata = []){
         $p = new Patient();
         $r = new Room();
@@ -101,6 +104,11 @@ class PatientController {
 
         header('Location: /patient?id=' . $requestdata['id']);
         exit();
+    }
+
+    public function showPatUpdate($requestdata = []){
+
+        View::render('patient-update');
     }
 
 }
