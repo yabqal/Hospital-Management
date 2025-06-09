@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/icons/face-recognition-2.svg">
+  <link rel="icon" type="image/png" href="/icon/face-recognition-2.svg">
   <title>Home</title>
 </head>
 <body>
@@ -20,11 +20,11 @@
       <hr>
     </div>
     <div class="choice-list">
-      <a href="/register-choice"><div class="list-item"><img src="/icons/profile-2.svg" alt="">Register patients and physicians</div></a>
-      <a href="/details-choice"><div class="list-item"><img src="/icons/paragraph.svg" alt="">Details of patients and physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/check-2.svg" alt="">Available Physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/key-2.svg" alt="">View Rooms</div></a>
+      <a href="/register-choice"><div class="list-item"><img src="/icon/profile-2.svg" alt="">Register patients and physicians</div></a>
+      <a href="/details-choice"><div class="list-item"><img src="/icon/paragraph.svg" alt="">Details of patients and physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icon/check-2.svg" alt="">Available Physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icon/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
+      <a href="/"><div class="list-item"><img src="/icon/key-2.svg" alt="">View Rooms</div></a>
     </div>
   </div>
 </body>

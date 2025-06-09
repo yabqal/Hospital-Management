@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/icons/face-recognition-2.svg">
+    <link rel="icon" type="image/png" href="/icon/face-recognition-2.svg">
 </head>
 <body>
   <div class="page-container">
@@ -18,12 +18,12 @@
       <div class="title-button">
         <div class="title">Patient Details</div>
         <div class="nav-btns">
-          <div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div>
-          <div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div>
-          <div class="leave-btn"><img src="/icons/leave-3 1.png" alt=""></div>
-          <div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div>
-          <div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div>
-          <div class="leave-btn"><img src="/icons/leave-3 1.png" alt=""></div>
+          <div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div>
+          <div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div>
+          <div class="leave-btn"><img src="/icon/leave-3 1.png" alt=""></div>
+          <div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div>
+          <div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div>
+          <div class="leave-btn"><img src="/icon/leave-3 1.png" alt=""></div>
         </div>
       </div>
       <hr />

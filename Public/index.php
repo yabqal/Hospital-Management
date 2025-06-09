@@ -9,6 +9,7 @@ require_once __DIR__ . '/../App/Controller/HomeController.php';
 require_once __DIR__ . '/../App/Controller/DoctorController.php';
 require_once __DIR__ . '/../App/Controller/PatientController.php';
 require_once __DIR__ . '/../App/Controller/AuthController.php';
+require_once __DIR__ . '/../App/Controller/AppointmentController.php';
 
 //?????????????? ig its here cuz we access the id and name in the paths???
 // if(!isset($_POST['id']) || !isset($_POST['name'])){

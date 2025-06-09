@@ -18,7 +18,7 @@ class AppointmentController{
     }
 
     public function showAppReg($requestdata = []){
-        View::render("register-appointment");
+        View::render("schedule-meeting");
     }
 
     public function delApp($requestdata = []){

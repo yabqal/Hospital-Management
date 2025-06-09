@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/icons/face-recognition-2.svg">
+  <link rel="icon" type="image/png" href="/icon/face-recognition-2.svg">
   <title>Register Doctor</title>
 </head>
 <body>
@@ -18,8 +18,8 @@
       <div class="title-button">
         <div class="title">Register Doctor</div>
         <div class="nav-btns">
-          <a href="/register-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
-          <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
+          <a href="/register-choice"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+          <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
           <div class="log-out-btn">Log Out</div>
         </div>
       </div>

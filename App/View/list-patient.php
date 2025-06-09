@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/icons/face-recognition-2.svg">
+    <link rel="icon" type="image/png" href="/icon/face-recognition-2.svg">
     <link rel="stylesheet" href="/styles/common.css"/>
     <link rel="stylesheet" href="/styles/patient-list.css"/>
 </head>
@@ -20,8 +20,8 @@
             <input type="search" name="searchpatient" placeholder="Search">
           </div>
           <div class="nav-btns">
-            <a href="/details-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
-            <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
+            <a href="/details-choice"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+            <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
             <div class="log-out-btn">Log Out</div>
           </div>
         </div>
@@ -36,9 +36,9 @@
              '<div class="list-item">'   
              . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
              '<div class="buttons-container">' .
-             '<a href=""><div class="button assign-physician">'. '<img src="/icons/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
-             '<a href=""><div class="button assign-room">'. '<img src="/icons/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .
-             '<a href="/patients/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icons/c-delete-2.svg" />' . ' Remove ' . '</div></a>' .
+             '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
+             '<a href=""><div class="button assign-room">'. '<img src="/icon/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .
+             '<a href="/patients/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>' .
              '</div>' .
              '</div>' .
              '</div>' ;
