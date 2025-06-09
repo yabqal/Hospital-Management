@@ -1,3 +1,10 @@
+<?php
+  //session_start(); 
+  if (!isset($_SESSION['user']) && $requestPath != '/login') { 
+    header("Location: /login");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,16 +22,24 @@
     <div class="top-bar">
       <div class="title-button">
         <div class="title">Welcome, Choose Action</div>
-        <div class="log-out-btn">Log Out</div>
+        <a href="/logout"><div class="log-out-btn">Log Out</div></a>
       </div>
       <hr>
     </div>
     <div class="choice-list">
+<<<<<<< HEAD
       <a href="/register-choice"><div class="list-item"><img src="/icon/profile-2.svg" alt="">Register patients and physicians</div></a>
       <a href="/details-choice"><div class="list-item"><img src="/icon/paragraph.svg" alt="">Details of patients and physicians</div></a>
       <a href="/"><div class="list-item"><img src="/icon/check-2.svg" alt="">Available Physicians</div></a>
       <a href="/"><div class="list-item"><img src="/icon/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
       <a href="/"><div class="list-item"><img src="/icon/key-2.svg" alt="">View Rooms</div></a>
+=======
+      <a href="/register-choice"><div class="list-item"><img src="/icons/profile-2.svg" alt="">Register patients and physicians</div></a>
+      <a href="/details-choice"><div class="list-item"><img src="/icons/paragraph.svg" alt="">Details of patients and physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icons/check-2.svg" alt="">Available Physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icons/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
+      <a href="/rooms"><div class="list-item"><img src="/icons/key-2.svg" alt="">View Rooms</div></a>
+>>>>>>> fb09b9b71550db2fed47c176693058dcaf5997d6
     </div>
   </div>
 </body>

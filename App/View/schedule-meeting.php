@@ -81,7 +81,7 @@
                     <p>Assigned to</p>
                     <span>Physician: <b id="selected-physician"></b></span>
                     <p>On</p>
-                    <span>Date: <b><?php echo date("Y-m-d"); ?></b></span>
+                    <span>Date: <b id="selected-date"></b></span>
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
@@ -95,6 +95,8 @@
 
     const patientselected = document.getElementById("selected-patient");
     const physicianselected = document.getElementById("selected-physician");
+    const date = document.querySelector(".input-date");
+    const dateselected = document.getElementById("selected-date");
 
     function setupSearch(inputid, listClass) {
         const input = document.getElementById(inputid);
@@ -131,6 +133,10 @@
     document.querySelector("#clear-btn").addEventListener("click", function(){
         patientselected.textContent = "";
         physicianselected.textContent = "";
-    })
+    });
+
+    date.addEventListener("input", () => {
+        dateselected.textContent = date.value;
+    });
 </script>
 </html>

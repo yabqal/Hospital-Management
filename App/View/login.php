@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/icon/face-recognition-2.svg">
 </head>
-<body>
+<body>  
     <div class="main">
         <h1>Hospital Management System</h1>
         <p>This is a system designed to manage patients, physicians, rooms, schedules, etc for a medical facilities and hospitals</p>

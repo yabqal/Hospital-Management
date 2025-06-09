@@ -5,7 +5,7 @@ class RoomController {
         $r = new Room();
         $requestdata = array_merge($requestdata, $r->getAll());
 
-        View::render("list-room", $requestdata);
+        View::render("rooms", $requestdata);
     }
 
     public function delRoom($requestdata = []){
@@ -34,6 +34,22 @@ class RoomController {
         $r->update($requestdata);
 
         header('Location: /room?id=' . $requestdata['id']);
+        exit();
+    }
+
+    public function occupyRoom($requestdata){
+        $r = new Room();
+        $r->roomTake($requestdata['rid'], $requestdata['pid']);
+
+        header('Location: /rooms');
+        exit();
+    }
+
+    public function freeRoom($requestdata){
+        $r = new Room();
+        $r->roomFree($requestdata['rid']);
+
+        header('Location: /rooms');
         exit();
     }
 

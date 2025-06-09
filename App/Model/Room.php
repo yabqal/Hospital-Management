@@ -22,9 +22,15 @@ class Room extends Model {
             )['id'];
     }
 
-    function roomTake($id){
+    function roomTake($rid, $pid){
         mysqli_query(static::$db,
-        "UPDATE " . $this->_table . " SET taken = true WHERE id = " . $id
+        "UPDATE " . $this->_table . " SET taken = true, patientId = " . $pid . " WHERE id = " . $rid
+        );
+    }
+
+    function roomFree($rid){
+        mysqli_query(static::$db,
+        "UPDATE " . $this->_table . " SET taken = false, patientId = null WHERE id = " . $rid
         );
     }
 

@@ -6,6 +6,7 @@ class AuthController{
   }
 
   public function authLogin($requestdata = []){
+
     $username = $requestdata['username'] ?? '';
     $password = $requestdata['password'] ?? '';
 
@@ -24,6 +25,7 @@ class AuthController{
     $user = $users->fetch_assoc();
 
     if ($password == $user["password"]) {
+      $_SESSION['user'] = $user['username'];
       header('Location: /');
       exit();
     }
@@ -32,5 +34,14 @@ class AuthController{
       View::render('login', $error);
     }
   }
+
+  public function logout($requestdata = []){
+    session_start();
+    session_unset();
+    session_destroy();
+    setcookie(session_name(), '', time() - 3600, '/');
+    header("Location: /login");
+    exit();
+}
 }
 ?>
