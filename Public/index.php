@@ -9,6 +9,7 @@ require_once __DIR__ . '/../App/Controller/HomeController.php';
 require_once __DIR__ . '/../App/Controller/DoctorController.php';
 require_once __DIR__ . '/../App/Controller/PatientController.php';
 require_once __DIR__ . '/../App/Controller/AuthController.php';
+require_once __DIR__ . '/../App/Controller/RoomController.php';
 
 //?????????????? ig its here cuz we access the id and name in the paths???
 // if(!isset($_POST['id']) || !isset($_POST['name'])){
@@ -27,6 +28,8 @@ require_once __DIR__ . '/../App/Controller/AuthController.php';
 // how is doctor availability handled?
 $requestPath = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
+session_start();
+
 $routes = [
     '/'                                 => ['controller' => 'HomeController', 'action' => 'index'], //tested
     '/register-choice'                  => ['controller' => 'HomeController', 'action' => 'register'], //tested
@@ -36,6 +39,7 @@ $routes = [
     '/login'                            => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/login-auth'                       => ['controller' => 'AuthController', 'action' => 'authLogin'],
     '/signup'                           => ['controller' => 'AuthController', 'action' => 'showSignup'],
+    '/logout'                           => ['controller' => 'AuthController', 'action' => 'logout'],
 
 
     '/register-doctor'                  => ['controller' => 'DoctorController', 'action' => 'showDocReg'], // tested
@@ -70,6 +74,8 @@ $routes = [
     '/submit-room'                      => ['controller' => 'RoomController', 'action' => 'recRoom'],
     '/rooms'                            => ['controller' => 'RoomController', 'action' => 'listRoom'],
     '/rooms/remove'                     => ['controller' => 'RoomController', 'action' => 'delRoom'],
+    '/rooms/occupy'                     => ['controller' => 'RoomController', 'action' => 'occupyRoom'],
+    '/rooms/free'                       => ['controller' => 'RoomController', 'action' => 'freeRoom'],
     //"/rooms/{$_POST['id']}"             => ['controller' => 'RoomController', 'action' => 'delRoom'],
     '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
 
@@ -88,6 +94,7 @@ $routes = [
 // unset($_POST['id']);
 
 //print_r($_POST);
+//if (!isset($_SESSION['user']) && $requestPath != "/login") { header("Location: /login"); exit();}
 
 $requestData = array_merge($_GET, $_POST);
 
