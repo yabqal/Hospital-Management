@@ -13,8 +13,6 @@ abstract class Model{
             
         }
 
-        
-
         $this->_table = $tableName;
         
     }

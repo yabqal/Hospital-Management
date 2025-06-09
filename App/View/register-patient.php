@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/styles/register-patient.css" />
   <link rel="stylesheet" href="/styles/common.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/icons/face-recognition-2.svg">
   <title>Register Patient</title>
 </head>
 <body>
@@ -43,8 +44,8 @@
           <div class="sex-input">
             <select class="inp" name="sex" required>
             <option value="" disabled selected>Sex</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
           </select>
           </div>
           <input 

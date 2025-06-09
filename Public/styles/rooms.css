@@ -1,0 +1,55 @@
+/* Main Page */
+
+.available-rooms, .occupied-rooms{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+  margin-bottom: 30px;
+}
+
+.available-rooms .room-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #1b273b;
+  border-radius: 16px;
+  box-shadow: inset 0px 1px 2px rgb(196, 196, 196), 0px 1px 2px black;
+}
+
+.number{
+  font-size: 90px;
+  font-weight: 600;
+}
+
+.room-text{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-right: 16px;
+  font-weight: 600;
+  color: #ceb12d;
+}
+
+.occupied-rooms .room-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #262d39;
+  border-radius: 16px;
+  box-shadow: inset 0px 1px 2px rgb(196, 196, 196), 0px 1px 2px black;
+}
+
+.occupied-rooms .room-card .number{
+  color: #afafaf;
+}
+
+.occupied-rooms .room-card .room-text{
+  color: #919191;
+}
