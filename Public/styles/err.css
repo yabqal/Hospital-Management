@@ -1,0 +1,18 @@
+body{
+    background-color: #060D17;
+}
+
+.err-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    text-align:center;
+    font-size: 1.5rem;
+    line-height: 25px;
+}
+
+.err-body h1{
+    font-size: 5rem;
+}
