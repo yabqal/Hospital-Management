@@ -102,29 +102,29 @@ public function updatePat($requestData, $files = [])
     $existingPatient = $patientModel->searchByID($requestData['id'])['patients'];
 
     
-    if (isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
+    // if (isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
         
-        if (!empty($existingPatient['photo'])) {
-            $oldPhotoPath = __DIR__ . "/../../Public/uploads/" . $existingPatient['photo'];
-            if (file_exists($oldPhotoPath)) {
-                unlink($oldPhotoPath);
-            }
-        }
+    //     if (!empty($existingPatient['photo'])) {
+    //         $oldPhotoPath = __DIR__ . "/../../Public/uploads/" . $existingPatient['photo'];
+    //         if (file_exists($oldPhotoPath)) {
+    //             unlink($oldPhotoPath);
+    //         }
+    //     }
 
-        $imgTempPath = $files['photo']['tmp_name'];
-        $imgName = basename($files['photo']['name']);
-        $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+    //     $imgTempPath = $files['photo']['tmp_name'];
+    //     $imgName = basename($files['photo']['name']);
+    //     $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
 
-        $newImageName = uniqid("img_") . "." . $imgExt;
-        $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
+    //     $newImageName = uniqid("img_") . "." . $imgExt;
+    //     $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
 
-        move_uploaded_file($imgTempPath, $uploadPath);
+    //     move_uploaded_file($imgTempPath, $uploadPath);
 
-        $requestData['photo'] = $newImageName;
-    } else {
+    //     $requestData['photo'] = $newImageName;
+    // } else {
         
-        $requestData['photo'] = $existingPatient['photo'];
-    }
+    //     $requestData['photo'] = $existingPatient['photo'];
+    // }
 
     
     $patientModel->update($requestData);

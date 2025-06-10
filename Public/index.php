@@ -66,6 +66,7 @@ $routes = [
     "/patients/remove"                  => ['controller' => 'PatientController', 'action' => 'delPat'], //tested
     "/patients/assign-room"             => ['controller' => 'PatientController', 'action' => 'assignRoomPat'],
     '/patient/update'                    => ['controller' => 'PatientController', 'action' => 'showUp'],
+    '/patient/updateP'                    => ['controller' => 'PatientController', 'action' => 'updatePat'],
 
 
     //avaiable rooms, add take and leave room and related things???
