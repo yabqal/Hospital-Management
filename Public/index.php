@@ -50,7 +50,9 @@ $routes = [
     //"/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
     "/doctor"                           => ['controller' => 'DoctorController', 'action' => 'detailDoc'],
     //for the action not the update page
-    '/doctor/update'                    => ['controller' => 'DoctorController', 'action' => 'updateDoc'],
+    '/doctor/update'                    => ['controller' => 'DoctorController', 'action' => 'showUp'],
+    '/doctor/updateD'                   => ['controller' => 'DoctorController', 'action' => 'updateDoc'],
+
 
 
     '/register-patient'                 => ['controller' => 'PatientController', 'action' => 'showPatReg'], // tested

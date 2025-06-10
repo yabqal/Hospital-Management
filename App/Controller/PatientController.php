@@ -94,13 +94,12 @@ class PatientController {
         }
     }
 
-    //you need to handle pic update separately
-public function updatePat($requestData, $files = [])
-{
-    $patientModel = new Patient();
 
-    $existingPatient = $patientModel->searchByID($requestData['id'])['patients'];
+public function updatePat($requestData, $files = []){
+    $p = new Patient();
 
+    //$oldRequestData = $p->searchByID($requestData['id'])[0];
+    unset($requestData['patient/updateP']);
     
     // if (isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
         
@@ -127,7 +126,7 @@ public function updatePat($requestData, $files = [])
     // }
 
     
-    $patientModel->update($requestData);
+    $p->update($requestData);
 
    
     header('Location: /patient?id=' . $requestData['id']);

@@ -58,7 +58,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
         <div class="input-group emergency-inp-group">
           <input class="inp" type="text" name="emergencyName" value="<?php echo $data['emergencyName']; ?>" required />
           <input class="inp" type="tel" name="emergencyPhone" value="<?php echo $data['emergencyPhone']; ?>" style="margin: 0px 24px;" required />
-          <input class="inp" type="text" name="emergenceyRelation" value="<?php echo $data['emergenceyRelation']; ?>" required />
+          <input class="inp" type="text" name="emergencyRelation" value="<?php echo $data['emergencyRelation']; ?>" required />
         </div>
 
         <div class="section-title" style="margin-top: 48px;">Additional Details</div>
@@ -66,7 +66,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
 
         <div class="photo-and-btn">
           <div></div>
-          <button type="submit" class="submit-btn">Save Changes</button>
+          <input type="submit" class="submit-btn" value="Save Changes">
         </div>
       </form>
     </div>
