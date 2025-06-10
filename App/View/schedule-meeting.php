@@ -85,7 +85,12 @@
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
-                    <input id="confirm-btn" type="submit" name="submit" value="Confirm">
+                    <form action="/submit-appointment" method="POST">
+                        <input type="hidden" name="patient" id="hidden-patient">
+                        <input type="hidden" name="physician" id="hidden-physician">
+                        <input type="hidden" name="date" id="hidden-date">
+                        <input id="confirm-btn" type="submit" name="submit" value="Confirm">
+                    </form>
                 </div>
             </div>
         </div>
@@ -97,6 +102,9 @@
     const physicianselected = document.getElementById("selected-physician");
     const date = document.querySelector(".input-date");
     const dateselected = document.getElementById("selected-date");
+    const hiddenpatient = document.getElementById("hidden-patient");
+    const hiddenphysician = document.getElementById("hidden-physician");
+    const hiddendate = document.getElementById("hidden-date");
 
     function setupSearch(inputid, listClass) {
         const input = document.getElementById(inputid);
@@ -137,6 +145,25 @@
 
     date.addEventListener("input", () => {
         dateselected.textContent = date.value;
+    });
+
+    document.querySelectorAll(".pat-scroll .list").forEach(item => {
+        item.addEventListener("click", () => {
+            patientselected.textContent = item.textContent;
+            hiddenpatient.value = item.textContent;
+        });
+    });
+
+    document.querySelectorAll(".phy-scroll .list").forEach(item => {
+        item.addEventListener("click", () => {
+            physicianselected.textContent = item.textContent;
+            hiddenphysician.value = item.textContent;
+        });
+    });
+
+    date.addEventListener("input", () => {
+        dateselected.textContent = date.value;
+        hiddendate.value = date.value;
     });
 </script>
 </html>
