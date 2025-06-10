@@ -31,7 +31,7 @@
     </div>
     <div class="choice-list">
       <a href="/patients"><div class="list-item"><img src="icon/paragraph.svg" alt="">Patient Details</div></a>
-      <a href=""><div class="list-item"><img src="icon/paragraph.svg" alt="">Physician Details</div></a>
+      <a href="/doctors"><div class="list-item"><img src="icon/paragraph.svg" alt="">Physician Details</div></a>
     </div>
   </div>
 </body>

@@ -25,13 +25,8 @@
         <div class="title-button">
           <div class="title">Rooms</div>
           <div class="nav-btns">
-<<<<<<< HEAD
-            <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
-            <div class="log-out-btn">Log Out</div>
-=======
             <a href="/"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
             <a href="/logout"><div class="log-out-btn">Log Out</div></a>
->>>>>>> fb09b9b71550db2fed47c176693058dcaf5997d6
           </div>
         </div>
         <hr />

@@ -18,10 +18,7 @@ require_once __DIR__ . '/../App/Controller/RoomController.php';
 //     $_POST['name'] = '0';
 // }
 
-//fix sex, doesnt get recorded correctly, current format $data[sex] = "male" or "female"
-
 // Update patient information(handle photos), room information
-//for room update we might need some additional things depending on whether or not we decide to add new table or not
 
 //show update page for all
 
@@ -50,7 +47,7 @@ $routes = [
     "/doctors/available"                => ['controller' => 'DoctorController', 'action' => 'availableDoc'],
     //"/doctors/{$_POST['name']}"         => ['controller' => 'DoctorController', 'action' => 'docByName'],
     "/doctors/remove"                   => ['controller' => 'DoctorController', 'action' => 'delDoc'], // tested
-    "/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
+    //"/doctors/assign-room"              => ['controller' => 'DoctorController', 'action' => 'assignRoomDoc'],
     "/doctor"                           => ['controller' => 'DoctorController', 'action' => 'detailDoc'],
     //for the action not the update page
     '/doctor/update'                    => ['controller' => 'DoctorController', 'action' => 'updateDoc'],

@@ -60,12 +60,12 @@ class DoctorController {
         View::render('list-doctor', $requestdata);
     }
 
-    public function assignRoomDoc($requestdata = []){
+    private function assignRoomDoc($requestdata = []){
         $p = new Doctor();
         $r = new Room();
 
         if($r->roomAvail($requestdata['rid'])){
-            $r->roomTake($requestdata['rid']);
+            $r->roomTake($requestdata['rid'], $requestdata['did']);
             $p->assignRoom($requestdata);
             header("Location: /doctors");
         }

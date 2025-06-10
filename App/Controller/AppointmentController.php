@@ -18,7 +18,12 @@ class AppointmentController{
     }
 
     public function showAppReg($requestdata = []){
-        View::render("schedule-meeting");
+        $p = new Patient();
+        $d = new Doctor();
+
+        $requestdata = array_merge($p->getAll(), $d->getAll());
+
+        View::render("schedule-meeting", $requestdata);
     }
 
     public function delApp($requestdata = []){

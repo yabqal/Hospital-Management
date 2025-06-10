@@ -75,6 +75,8 @@ class PatientController {
         //also delete the associated file alongside it ig
         $p = new Patient();
         $p->delete($requestdata['id']);
+        $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
+        unlink('/uploads/' . $pic);
         header('Location: /patients');
         exit();
     }
@@ -84,8 +86,8 @@ class PatientController {
         $r = new Room();
 
         if($r->roomAvail($requestdata['rid'])){
-            $r->roomTake($requestdata['rid']);
-            $p->assignRoom($requestdata);
+            $r->roomTake($requestdata['rid'], $requestdata['pid']);
+            //$p->assignRoom($requestdata);
             header("Location: /patients");
             exit();
         }
@@ -98,6 +100,8 @@ class PatientController {
     public function updatePat($requestdata){
         $p = new Patient();
         $p->update($requestdata);
+        $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
+        unlink('/uploads/' . $pic);
 
         header('Location: /patient?id=' . $requestdata['id']);
         exit();

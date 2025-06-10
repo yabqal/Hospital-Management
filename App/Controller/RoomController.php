@@ -1,6 +1,6 @@
 <?php
 class RoomController {
-    //id, p or d or o?, name, available and id of taker, floor maybe have another table?
+    //id, available and id of taker
     public function listRoom($requestdata = []){
         $r = new Room();
         $requestdata = array_merge($requestdata, $r->getAll());
