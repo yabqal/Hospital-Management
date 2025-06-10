@@ -23,13 +23,13 @@ body, html{
 .patient-info{
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     gap: 30px;
 }
 
 .patient-info img{
-    height: 100%;
-    border-radius: 16px;
+    width: 400px;
+    border-radius: 12px;
 }
 
 .patient-info .details{
@@ -77,4 +77,17 @@ body, html{
     border-radius: 7px;
     padding: 7px;
     border: none;
+}
+
+.details p{
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.details .detail{
+    padding: 8px;
+    border-radius: 12px;
+    margin-left: 12px;
+    font-weight: 400;
+    background-color: #101823;
 }

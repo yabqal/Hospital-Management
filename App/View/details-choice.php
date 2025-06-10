@@ -23,7 +23,7 @@
       <div class="title-button">
         <div class="title">Welcome, Choose Action</div>
         <div class="nav-btns">
-          <a href="/"><div class="back-btn"><img src="/icons/arrow-left.svg" alt=""/></div></a>
+          <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt=""/></div></a>
           <a href="/logout"><div class="log-out-btn">Log Out</div></a>
         </div>
       </div>

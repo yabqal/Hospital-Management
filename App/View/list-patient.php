@@ -27,8 +27,8 @@
             <input type="search" name="searchpatient" placeholder="Search">
           </div>
           <div class="nav-btns">
-            <a href="/details-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
-            <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
+            <a href="/details-choice"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+            <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
             <a href="/logout"><div class="log-out-btn">Log Out</div></a>
           </div>
         </div>
