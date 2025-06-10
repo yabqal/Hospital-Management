@@ -78,7 +78,7 @@
                     <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">Assigned to</p>
                     <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician">
                         <?php
-                    if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
+                    if(isset($data['doctor'])) echo $data['fName'] . ' ' . $data['lName'];
                     else echo '';
                     ?>
                     </span></span>
@@ -96,7 +96,7 @@
                     else echo '';
                     ?>>
                         <input type="hidden" name="did" id="hidden-physician" value=<?php
-                    if(isset($data['patient'])) echo $data['id'];
+                    if(isset($data['doctor'])) echo $data['id'];
                     else echo '';
                     ?>>
                         <input type="hidden" name="date" id="hidden-date">
