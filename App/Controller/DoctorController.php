@@ -79,7 +79,8 @@ class DoctorController {
     }
 
     public function updateDoc($requestdata){
-        unset($requestData['patient/update']);
+        unset($requestdata['doctor/updateD']);
+        print_r($requestdata);
         $d = new Doctor();
         $d->update($requestdata);
 

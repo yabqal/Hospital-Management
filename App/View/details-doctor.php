@@ -44,7 +44,9 @@
         <div class="buttons-container">
           <?php
             $requestD = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&lName=" . $data['lName'] . "&doctor=1";
+            $requestDD = http_build_query($data);
             echo '<a href="/register-appointment?'.$requestD.'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Patient ' . '</div></a>' .
+            '<a href="/doctor/update?' . $requestDD . '"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
             '<a href="/patients/remove?id='.$data['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>'
           ?>
         </div>
