@@ -46,7 +46,6 @@
               '</a>' .
              '<div class="buttons-container">' .
              '<a href="/register-appointment?'. $requestP .'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
-             '<a href=""><div class="button assign-room">'. '<img src="/icon/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .
              '<a href="/patients/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>' .
              '</div>' .
              '</div>' .

@@ -1,3 +1,10 @@
+<?php
+// session_start();
+if (!isset($_SESSION['user']) && $requestPath != '/login') {
+  header("Location: /login");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
