@@ -46,11 +46,15 @@
             <p>Address: <span class="detail"><?php echo $data['address']; ?></span></p>
             <p>Registration Date: <span class="detail"><?php echo $data['date']; ?></span></p>
             <div class="buttons-container">
-              <?php
-                echo '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
-                '<a href="/update-patient.php?id='.$data['id'].'"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
-                '<a href="/patients/remove?id='.$data['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>';
-              ?>
+`            <?php 
+            $requestP = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&mName=" . $data['mName'] . "&lName=" . $data['lName'] . "&age=" . $data['age'] . "&sex=" . $data['sex'] . "&address=" . $data['address'] . "&date=" . $data['date'] . "&description=" . $data['description']. "&phone=" . $data['phone'] . "&email=" . $data['email'] . "&cardNumber=" . $data['cardNumber'] . "&emergencyName=" . $data['emergencyName'] . "&emergencyPhone=" . $data['emergencyPhone'] . "&emergenceyRelation=" . $data['emergencyRelation'] . "&photo=" . $data['photo'];
+
+            echo '<a href=""><div class="button assign-physician"><img src="/icon/accessibility-2.svg" /> Assign to Physician </div></a>' .
+                '<a href=""><div class="button assign-room"><img src="/icon/key-2.svg" /> Assign to Room </div></a>' .
+                '<a href="/patient/update?' . $requestP . '"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
+                '<a href="/patients/remove?id=' . $data['id'] . '"><div class="button remove"><img src="/icon/c-delete-2.svg" /> Remove </div></a>';
+            ?>`
+
             </div>
         </div>
     </div>

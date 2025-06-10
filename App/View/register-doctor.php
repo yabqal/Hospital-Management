@@ -68,7 +68,7 @@
         </div>
 
         <div class="input-group">
-          <input class="inp date-input" type="date" name="startDate" placeholder="Start Date" required />
+          <input id="startDate" class="inp date-input" type="date" name="startDate" placeholder="Start Date" required />
           <!-- make sure the format/pattern is followed? -->
           <input class="inp wrkhrs" type="text" name="workingHours" placeholder="Working Hours (e.g. 9AM - 5PM)" required />
         </div>
@@ -83,5 +83,12 @@
       </form>
     </div>
   </div>
+
+  <script>
+    // Set the minimum date for startDate input to today
+    const startDateInput = document.getElementById('startDate');
+    const today = new Date().toISOString().split('T')[0];
+    startDateInput.setAttribute('min', today);
+  </script>
 </body>
 </html>

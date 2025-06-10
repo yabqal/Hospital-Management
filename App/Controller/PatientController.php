@@ -95,33 +95,48 @@ class PatientController {
     }
 
     //you need to handle pic update separately
-    public function updatePat($requestdata){
-        $p = new Patient();
+public function updatePat($requestData, $files = [])
+{
+    $patientModel = new Patient();
 
-        if(isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
-            $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
-            unlink(__DIR__ . "/../../Public/uploads/" . $pic);
+    $existingPatient = $patientModel->searchByID($requestData['id'])['patients'];
 
-            $imgTempPath = $files['photo']['tmp_name'];
-            $imgName = basename($files['photo']['name']);
-            $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
-
-            $newImageName = uniqid("img_")  . "." . $imgExt;
-            $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
-
-            move_uploaded_file($imgTempPath, $uploadPath);
-
-            $requestdata['photo'] = $newImageName;
-        }
-        else {
-            $requestdata['photo'] = null;
-        }
+    
+    if (isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
         
-        $p->update($requestdata);
+        if (!empty($existingPatient['photo'])) {
+            $oldPhotoPath = __DIR__ . "/../../Public/uploads/" . $existingPatient['photo'];
+            if (file_exists($oldPhotoPath)) {
+                unlink($oldPhotoPath);
+            }
+        }
 
-        header('Location: /patient?id=' . $requestdata['id']);
-        exit();
+        $imgTempPath = $files['photo']['tmp_name'];
+        $imgName = basename($files['photo']['name']);
+        $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+
+        $newImageName = uniqid("img_") . "." . $imgExt;
+        $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
+
+        move_uploaded_file($imgTempPath, $uploadPath);
+
+        $requestData['photo'] = $newImageName;
+    } else {
+        
+        $requestData['photo'] = $existingPatient['photo'];
     }
+
+    
+    $patientModel->update($requestData);
+
+   
+    header('Location: /patient?id=' . $requestData['id']);
+    exit();
+}
+
+public function showUp($requestData = []) {
+    View::render("update-patient", $requestData);
+}
 
 }
 
