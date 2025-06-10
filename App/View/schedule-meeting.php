@@ -78,8 +78,8 @@
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
                     <form action="/submit-appointment" method="POST">
-                        <input type="hidden" name="patient" id="hidden-patient">
-                        <input type="hidden" name="physician" id="hidden-physician">
+                        <input type="hidden" name="pid" id="hidden-patient">
+                        <input type="hidden" name="did" id="hidden-physician">
                         <input type="hidden" name="date" id="hidden-date">
                         <input id="confirm-btn" type="submit" name="submit" value="Confirm">
                     </form>

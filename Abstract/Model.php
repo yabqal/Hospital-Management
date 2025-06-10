@@ -8,7 +8,17 @@ abstract class Model{
 
     public function __construct($tableName){
         if(static::$db === null){
-            static::$db = mysqli_connect("localhost","root","","hospital-mangement") or die("Noooooooooo");
+            try {
+                mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+                static::$db = new mysqli("localhost", "root", "", "hospital-mangement");
+
+            } catch (mysqli_sql_exception $e) {
+                $error = 'Could not connect to the database';
+                header("Location: /error?error=" . urlencode($error));
+                exit();
+            }
+
+
             static::$db->set_charset('utf8mb4');
             
         }
@@ -28,10 +38,18 @@ abstract class Model{
         $values = array_map(function($value) {
             return "'" . mysqli_real_escape_string(static::$db, $value) . "'";
         }, array_values($data));
+        
+        try {
+            mysqli_query(static::$db, 
+                        "INSERT INTO `" . $this->_table . "` (" . implode(",", $fields) . " )" . " VALUES( " . implode("," , $values) . ")"
+                        );
+        }
+        catch (mysqli_sql_exception $e){
+            $error = 'Could not insert the data into the database';
+            header("Location: /error?error=" . urlencode($error));
+            exit();
+        }
 
-        mysqli_query(static::$db, 
-                    "INSERT INTO `" . $this->_table . "` (" . implode(",", $fields) . " )" . " VALUES( " . implode("," , $values) . ")"
-                    );
     }
 
     function update($data){
@@ -50,14 +68,29 @@ abstract class Model{
 
         $query = "UPDATE `" . $this->_table . "` SET " . implode(', ', $body) . " WHERE `id` = '" . $id . "'";
 
-        mysqli_query(static::$db, $query);
+        try {
+            mysqli_query(static::$db, $query);
+        }
+        catch (mysqli_sql_exception $e){
+            $error = 'Could not update the data into the database';
+            header("Location: /error?error=" . urlencode($error));
+            exit();
+        }
     }
 
     function delete($id){
 
-        mysqli_query(static::$db, 
+        try {
+            mysqli_query(static::$db, 
                     "DELETE FROM " . $this->_table . " WHERE id = " . $id
                     );
+        }
+        catch (mysqli_sql_exception $e){
+            $error = 'Could not delete ' . rtrim($this->_table) . ' into the database';
+            header("Location: /error?error=" . urlencode($error));
+            exit();
+        }
+        
     }
 
     function searchByID($id){

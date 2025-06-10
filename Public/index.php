@@ -84,6 +84,10 @@ $routes = [
     '/appointments/remove'              => ['controller' => 'AppointmentController', 'action' => 'delApp'],
     '/appointment'                      => ['controller' => 'AppointmentController', 'action' => 'detailApp'],
     '/appointment/update'               => ['controller' => 'AppointmentController', 'action' => 'updateApp'],
+
+
+    '/error'                            => ['action' => ''],
+    
     
 ];
 
@@ -113,12 +117,7 @@ if(isset($routes[$requestPath])){
         $controller->$actionName($requestData, $_FILES);
     }
     else{
-
-        $controllerName = $routes[$requestPath][$_SERVER['REQUEST_METHOD']]['controller'];
-        $actionName = $routes[$requestPath][$_SERVER['REQUEST_METHOD']]['action'];
-
-        $controller = new $controllerName();
-        $controller->$actionName($requestData);
+        View::render("errors/generalError", $requestData['error']);
     }
 }
 else{
