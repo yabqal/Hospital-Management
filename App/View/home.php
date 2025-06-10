@@ -21,7 +21,7 @@
   <div class="page-container">
     <div class="top-bar">
       <div class="title-button">
-        <div class="title">Welcome, Choose Action</div>
+        <div class="title">Welcome Admin, Choose Action</div>
         <a href="/logout"><div class="log-out-btn">Log Out</div></a>
       </div>
       <hr>

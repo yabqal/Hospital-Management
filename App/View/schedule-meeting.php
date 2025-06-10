@@ -67,7 +67,7 @@
             <div class="scheduling">
                 <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
                 <div class="arranged-schedule">
-<h3>Arranged Schedule</h3>
+                <h3>Arranged Schedule</h3>
                     <hr style="margin-bottom: 24px;"/>
                     <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient">
                         <?php
