@@ -10,18 +10,44 @@ class AuthController{
     $username = $requestdata['username'] ?? '';
     $password = $requestdata['password'] ?? '';
 
-    $conn = new mysqli("localhost", "root", "password", "hospital-mangement");
-
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+    try {
+      mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+      $conn = new mysqli("localhost", "root", "", "hospital-mangement");
+    }
+    catch (mysqli_sql_exception $e) {
+      $error = 'Could not connect to the database';
+      header("Location: /error?error=" . urlencode($error));
+      exit();
     }
 
-    if($conn->query("SELECT * FROM admins WHERE username = '$username'")->fetch_assoc() == null){
+    // if ($conn->connect_error) {
+    //   die("Connection failed: " . $conn->connect_error);
+    // }
+    try {
+      $result = $conn->query("SELECT * FROM admins WHERE username = '$username'")->fetch_assoc();
+    }
+    catch (mysqli_sql_exception $e) {
+      $error = 'Could not access the database';
+      header("Location: /error?error=" . urlencode($error));
+      exit();
+    }
+
+    //maybe use header
+    if($result == null){
       $error = "User not found!";
       View::render('login', $error);
       exit();
     }
-    $users = $conn->query("SELECT * FROM admins WHERE username = '$username'");
+
+    try {
+      $users = $conn->query("SELECT * FROM admins WHERE username = '$username'");
+    }
+    catch(mysqli_sql_exception $e){
+      $error = 'Could not access the database';
+      header("Location: /error?error=" . urlencode($error));
+      exit();
+    }
+
     $user = $users->fetch_assoc();
 
     if ($password == $user["password"]) {

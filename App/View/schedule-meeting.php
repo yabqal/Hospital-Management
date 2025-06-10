@@ -67,11 +67,21 @@
             <div class="scheduling">
                 <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
                 <div class="arranged-schedule">
-                    <h3>Arranged Schedule</h3>
+<h3>Arranged Schedule</h3>
                     <hr style="margin-bottom: 24px;"/>
-                    <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient"></span></span>
+                    <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient">
+                        <?php
+                    if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
+                    else echo '';
+                    ?>
+                    </span></span>
                     <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">Assigned to</p>
-                    <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician"></span></span>
+                    <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician">
+                        <?php
+                    if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
+                    else echo '';
+                    ?>
+                    </span></span>
                     <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">On</p>
                     <span>Date: <span style="margin-left: 8px; font-weight: 500;" id="selected-date"></span></span>
                 </div>
@@ -80,6 +90,15 @@
                     <form action="/submit-appointment" method="POST" onsubmit="return validateDate()">
                         <input type="hidden" name="pid" id="hidden-patient">
                         <input type="hidden" name="did" id="hidden-physician">
+                    <form action="/submit-appointment" method="POST">
+                        <input type="hidden" name="pid" id="hidden-patient" value=<?php
+                    if(isset($data['patient'])) echo $data['id'];
+                    else echo '';
+                    ?>>
+                        <input type="hidden" name="did" id="hidden-physician" value=<?php
+                    if(isset($data['patient'])) echo $data['id'];
+                    else echo '';
+                    ?>>
                         <input type="hidden" name="date" id="hidden-date">
                         <input id="confirm-btn" type="submit" name="submit" value="Confirm">
                     </form>
