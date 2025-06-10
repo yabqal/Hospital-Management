@@ -66,7 +66,7 @@
              '<div class="room-text">ROOM</div>' . 
              '<div class="number">' . $row['id'] . '</div>' .
              '</div>' .
-             '<div style="margin-bottom: 16px;"><span style="color: #afafaf"> Occupied By: </span> <b>' . $row['patientId'] . '</b></div>' .
+             '<div style="margin-bottom: 16px;"><span style="color: #afafaf"> Occupied By ID: </span> <b>' . $row['patientId'] . '</b></div>' .
              '<a href="/rooms/free?rid='.$row['id'].'"><button style="width: 140px; display: flex; justify-content: center; border-radius: 12px;" type="submit">Free</button></a>' .
              '</div>';
         }

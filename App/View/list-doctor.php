@@ -38,14 +38,14 @@
       <?php 
       foreach($data as $row){
         if(!isset($row['fName'])) continue;
-        $requestD = "id=" . $row['id'] . "&fName=" . $row['fName'] . "&mName=" . $row['mName'] . "&lName=" . $row['lName'] . "&doctor=1";
+        $requestD = "id=" . $row['id'] . "&fName=" . $row['fName'] . "&lName=" . $row['lName'] . "&doctor=1";
         echo '<div class="choice-list">' .
              '<div class="list-item">' .
              '<a href="/doctor?id=' . $row['id'] . '">' .
               $row['fName'] . ' ' . $row['lName'] .
               '</a>' .
              '<div class="buttons-container">' .
-             '<a href=/register-appointment?"'.$requestD.'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Patient ' . '</div></a>' .
+             '<a href="/register-appointment?'.$requestD.'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Patient ' . '</div></a>' .
              '<a href="/doctors/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>' .
              '</div>' .
              '</div>' .

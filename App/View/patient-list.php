@@ -36,7 +36,7 @@
           if(!isset($row['fName'])) continue;
           
           echo  '<div class="list-item">' .
-                  '<a href="patient-details.php?id=' . $row['id'] . '">' .
+                  '<a href="/patient?id=' . $row['id'] . '">' .
                   '<p id="pname">' . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] . '</p>' .
                   '</a>' .
                   '<div class="buttons">'.

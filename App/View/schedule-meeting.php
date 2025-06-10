@@ -65,9 +65,12 @@
                 </div>
             </div>
             <div class="scheduling">
-                <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
+                <div>
+                    <div style="margin: 12px; font-weight: bold;">Date</div>
+                    <input style="padding: 24px;" class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
+                </div>
                 <div class="arranged-schedule">
-<h3>Arranged Schedule</h3>
+                <h3>Arranged Schedule</h3>
                     <hr style="margin-bottom: 24px;"/>
                     <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient">
                         <?php
@@ -156,14 +159,13 @@
         physicianselected.textContent = "";
     });
 
-    // Prevent past date selection
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("date-input").setAttribute("min", today);
 
     function validateDate() {
         const selectedDate = new Date(date.value);
         const now = new Date();
-        now.setHours(0, 0, 0, 0); // Remove time component
+        now.setHours(0, 0, 0, 0); 
 
         if (selectedDate < now) {
             alert("You cannot choose a past date for the appointment.");

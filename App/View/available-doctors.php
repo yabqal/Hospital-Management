@@ -22,7 +22,7 @@
   <div class="page-container">
       <div class="top-bar">
         <div class="title-button">
-          <div class="title">Patient List</div>
+          <div class="title">Available Physicians</div>
           <div class="search-wrapper">
             <input type="search" name="searchpatient" placeholder="Search">
           </div>
