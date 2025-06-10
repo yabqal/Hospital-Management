@@ -70,16 +70,19 @@
                     <h4>Arranged Schedule</h4>
                     <hr/>
                     
-                    <span>Patient: <b id="selected-patient" value=<?php
-                    if(isset($data['patient'])) echo $data['fName'] . $data['mName'] . $data['lName'];
+                    <span>Patient: <b id="selected-patient">
+                    <?php
+                    if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
                     else echo '';
                     ?>
-                    ></b></span>
+                    </b></span>
                     <p>Assigned to</p>
-                    <span>Physician: <b id="selected-physician" value=<?php
+                    <span>Physician: <b id="selected-physician">
+                        <?php
                     if(isset($data['doctor'])) echo $data['fName'] . $data['lName'];
                     else echo '';
-                    ?>></b></span>
+                    ?>
+                    </b></span>
                     <p>On</p>
                     <span>Date: <b id="selected-date"></b></span>
                 </div>

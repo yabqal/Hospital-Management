@@ -29,7 +29,8 @@ class AppointmentController{
 
         $dData['doctors'] = $d->getAll();
 
-        $requestdata = array_merge($pData, $dData);
+        unset($requestdata['register-appointment']);
+        $requestdata = array_merge($requestdata, $pData, $dData);
 
         View::render("schedule-meeting", $requestdata);
     }

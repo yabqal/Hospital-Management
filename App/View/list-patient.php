@@ -38,14 +38,14 @@
       <?php 
       foreach($data as $row){
         if(!isset($row['fName'])) continue;
-        
+        $requestP = "id=" . $row['id'] . "&fName=" . $row['fName'] . "&mName=" . $row['mName'] . "&lName=" . $row['lName'] . "&patient=1";
         echo '<div class="choice-list">' .
              '<div class="list-item">'.  
-             '<a href="/patient?id=' . $row['id'] . '">' .
+             '<a href="/patient?id' . $row['id'] . '">' .
                   '<p id="pname">' . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] . '</p>' .
               '</a>' .
              '<div class="buttons-container">' .
-             '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
+             '<a href="/register-appointment?'. $requestP .'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
              '<a href=""><div class="button assign-room">'. '<img src="/icon/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .
              '<a href="/patients/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>' .
              '</div>' .
