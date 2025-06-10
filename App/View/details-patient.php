@@ -47,11 +47,12 @@
             <p>Registration Date: <span class="detail"><?php echo $data['date']; ?></span></p>
             <div class="buttons-container">
 `            <?php 
-            $requestP = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&mName=" . $data['mName'] . "&lName=" . $data['lName'] . "&age=" . $data['age'] . "&sex=" . $data['sex'] . "&address=" . $data['address'] . "&date=" . $data['date'] . "&description=" . $data['description']. "&phone=" . $data['phone'] . "&email=" . $data['email'] . "&cardNumber=" . $data['cardNumber'] . "&emergencyName=" . $data['emergencyName'] . "&emergencyPhone=" . $data['emergencyPhone'] . "&emergenceyRelation=" . $data['emergencyRelation'] . "&photo=" . $data['photo'];
+            $requestP = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&mName=" . $data['mName'] . "&lName=" . $data['lName'] . "&patient=1";
 
-            echo '<a href=""><div class="button assign-physician"><img src="/icon/accessibility-2.svg" /> Assign to Physician </div></a>' .
-                '<a href=""><div class="button assign-room"><img src="/icon/key-2.svg" /> Assign to Room </div></a>' .
-                '<a href="/patient/update?' . $requestP . '"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
+            $requestPD = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&mName=" . $data['mName'] . "&lName=" . $data['lName'] . "&age=" . $data['age'] . "&sex=" . $data['sex'] . "&phone=" . $data['phone'] . "&email=" . $data['email'] . "&cardNumber=" . $data['cardNumber'] .  "&address=" . $data['address'] . "&date=" . $data['date'] . "&emergencyName=" . $data['emergencyName'] . "&emergencyPhone=" . $data['emergencyPhone'] . "&emergenceyRelation=" . $data['emergencyRelation'] . "&photo=" . $data['photo'] . "&description=" . $data['description'];
+
+            echo '<a href="/register-appointment?'.$requestP.'"><div class="button assign-physician"><img src="/icon/accessibility-2.svg" /> Assign to Physician </div></a>' .
+                '<a href="/patient/update?' . $requestPD . '"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
                 '<a href="/patients/remove?id=' . $data['id'] . '"><div class="button remove"><img src="/icon/c-delete-2.svg" /> Remove </div></a>';
             ?>`
 

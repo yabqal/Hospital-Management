@@ -11,7 +11,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule Physician Meeting</title>
+    <title>Schedule  Appointment</title>
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/register-patient.css" />
     <link rel="stylesheet" href="/styles/patient-details.css" />
@@ -26,7 +26,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
     <div class="page-container">
         <div class="top-bar">
             <div class="title-button">
-                <div class="title">Schedule Patient Meeting</div>
+                <div class="title">Schedule  Appointment</div>
                 <div class="nav-btns">
                     <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
                     <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>

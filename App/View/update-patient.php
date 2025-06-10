@@ -28,7 +28,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
       <hr />
     </div>
     <div class="form-container">
-      <form action="/update-patient-save.php" method="POST">
+      <form action="/patient/updateP" method="POST">
         <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
         <div class="section-title">Basic Details</div>
         <div class="input-group">
@@ -58,7 +58,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
         <div class="input-group emergency-inp-group">
           <input class="inp" type="text" name="emergencyName" value="<?php echo $data['emergencyName']; ?>" required />
           <input class="inp" type="tel" name="emergencyPhone" value="<?php echo $data['emergencyPhone']; ?>" style="margin: 0px 24px;" required />
-          <input class="inp" type="text" name="emergencyRelation" value="<?php echo $data['emergencyRelation']; ?>" required />
+          <input class="inp" type="text" name="emergenceyRelation" value="<?php echo $data['emergenceyRelation']; ?>" required />
         </div>
 
         <div class="section-title" style="margin-top: 48px;">Additional Details</div>
