@@ -41,7 +41,7 @@
         $requestP = "id=" . $row['id'] . "&fName=" . $row['fName'] . "&mName=" . $row['mName'] . "&lName=" . $row['lName'] . "&patient=1";
         echo '<div class="choice-list">' .
              '<div class="list-item">'.  
-             '<a href="/patient?id' . $row['id'] . '">' .
+             '<a href="/patient?id=' . $row['id'] . '">' .
                   '<p id="pname">' . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] . '</p>' .
               '</a>' .
              '<div class="buttons-container">' .
