@@ -19,7 +19,6 @@
   <title>Register Patient</title>
 </head>
 <body>
-</form>
   <div class="page-container">
     <div class="top-bar">
       <div class="title-button">
@@ -33,18 +32,18 @@
       <hr />
     </div>
     <div class="form-container">
-      <form action="/submit-patient" method="POST" enctype="multipart/form-data">
+      <form action="/submit-patient" method="POST" enctype="multipart/form-data" id="patientForm">
         <div class="section-title">Basic Details</div>
         <div class="input-group">
           <input class="name-input inp" type="text" placeholder="First Name" id="fName" name="fName" required />
-          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" id="mName" style="margin: 0px 24px;" required />
+          <input class="name-input inp" type="text" placeholder="Father's Name" id="mName" name="mName" style="margin: 0px 24px;" required />
           <input class="name-input inp" type="text" placeholder="Grand Father's Name" id="lName" name="lName" />
         </div>
 
         <div class="input-group">
           <input class="inp age-input" type="number" min="0" placeholder="Age" name="age">
           <input class="inp add-input" type="text" placeholder="Address" name="address">
-          <input class="inp date-input" title="Registration Date"  type="date" placeholder="Date" name="date">
+          <input class="inp date-input" title="Registration Date" type="date" placeholder="Date" name="date" id="regDate" />
         </div>
 
         <div class="input-group equal-inp">
@@ -97,5 +96,24 @@
       </form>
     </div>
   </div>
+
+<script>
+  // Set minimum date of registration date input to today to prevent past dates
+  document.addEventListener('DOMContentLoaded', () => {
+    const regDateInput = document.getElementById('regDate');
+    const today = new Date().toISOString().split('T')[0];
+    regDateInput.setAttribute('min', today);
+
+    // Optional: Prevent form submission if date is in the past (extra safety)
+    document.getElementById('patientForm').addEventListener('submit', (e) => {
+      if (regDateInput.value) {
+        if (regDateInput.value < today) {
+          alert('Registration date cannot be in the past.');
+          e.preventDefault();
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
