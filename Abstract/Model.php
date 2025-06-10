@@ -14,8 +14,8 @@ abstract class Model{
 
             } catch (mysqli_sql_exception $e) {
                 $error = 'Could not connect to the database';
-                // header("Location: /error?error=" . urlencode($error));
-                // exit();
+                header("Location: /error?error=" . urlencode($error));
+                exit();
             }
 
 

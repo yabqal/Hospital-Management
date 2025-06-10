@@ -79,11 +79,16 @@ class DoctorController {
     }
 
     public function updateDoc($requestdata){
+        unset($requestData['patient/update']);
         $d = new Doctor();
         $d->update($requestdata);
 
         header('Location: /doctor?id=' . $requestdata['id']);
         exit();
+    }
+
+    public function showUp($requestData = []) {
+        View::render("update-doctor", $requestData);
     }
 
 }
