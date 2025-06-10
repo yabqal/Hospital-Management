@@ -21,7 +21,11 @@ class AppointmentController{
         $p = new Patient();
         $d = new Doctor();
 
-        $requestdata = array_merge($p->getAll(), $d->getAll());
+        $pData['patients'] = $p->getAll();
+
+        $dData['doctors'] = $d->getAll();
+
+        $requestdata = array_merge($pData, $dData);
 
         View::render("schedule-meeting", $requestdata);
     }

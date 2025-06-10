@@ -33,8 +33,6 @@ class PatientController {
         else {
             $requestdata['photo'] = null;
         }
-
-        echo $requestdata['photo'] . "hi";
         
         $p = new Patient();
         $p->insert($requestdata);
@@ -76,7 +74,7 @@ class PatientController {
         $p = new Patient();
         $p->delete($requestdata['id']);
         $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
-        unlink('/uploads/' . $pic);
+        unlink(__DIR__ . "/../../Public/uploads/" . $pic);
         header('Location: /patients');
         exit();
     }
@@ -99,9 +97,27 @@ class PatientController {
     //you need to handle pic update separately
     public function updatePat($requestdata){
         $p = new Patient();
+
+        if(isset($files['photo']) && $files['photo']['error'] == UPLOAD_ERR_OK) {
+            $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
+            unlink(__DIR__ . "/../../Public/uploads/" . $pic);
+
+            $imgTempPath = $files['photo']['tmp_name'];
+            $imgName = basename($files['photo']['name']);
+            $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+
+            $newImageName = uniqid("img_")  . "." . $imgExt;
+            $uploadPath = __DIR__ . "/../../Public/uploads/" . $newImageName;
+
+            move_uploaded_file($imgTempPath, $uploadPath);
+
+            $requestdata['photo'] = $newImageName;
+        }
+        else {
+            $requestdata['photo'] = null;
+        }
+        
         $p->update($requestdata);
-        $pic = $p->searchByID($requestdata['id'])['patients']['photo'];
-        unlink('/uploads/' . $pic);
 
         header('Location: /patient?id=' . $requestdata['id']);
         exit();
