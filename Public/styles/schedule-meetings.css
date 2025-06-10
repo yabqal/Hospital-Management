@@ -13,7 +13,7 @@
     justify-content: space-between;
     gap: 40px;
     width: 60%;
-    /* max-height: 300px; */
+    max-height: 300px;
     color: white;
     height: 100%;
     margin: none;
@@ -81,7 +81,7 @@ input[type="search"]{
     justify-content: space-between;
 }
 
-.schedule-actions > *{
+.schedule-actions #clear-btn,#confirm-btn{
     width: 48%;
     border-radius: 12px;
     border: none;

@@ -40,8 +40,10 @@
         if(!isset($row['fName'])) continue;
         
         echo '<div class="choice-list">' .
-             '<div class="list-item">'   
-             . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
+             '<div class="list-item">'.  
+             '<a href="/patient?id=' . $row['id'] . '">' .
+                  '<p id="pname">' . $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] . '</p>' .
+              '</a>' .
              '<div class="buttons-container">' .
              '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
              '<a href=""><div class="button assign-room">'. '<img src="/icon/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .

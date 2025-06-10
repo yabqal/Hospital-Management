@@ -30,26 +30,21 @@
         </div>
 
         <div class="container">
-            <form action="/submit-appointment" method = 'POST'>
             <div class="patients-list">
                 <div class="patients">
                     <div class="patient-titlebar">
                         <span id="title">Patients </span>
                         <input type="search" name="patient-search" id="search-patient" placeholder="Search patient">
                     </div>
-                    <?php 
-                    foreach($data['patients'] as $row){
-                        if(!isset($row['fName'])) continue;
-                        echo'<div class="pat-list">'.
-                            $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
-                            '</div>';
-                    }
-                    ?>
                     <div class="pat-scroll">
-                        <div class="list">Abebe</div>
-                        <div class="list">Kebebush</div>
-                        <div class="list">Ayelu</div>
-                        <div class="list">Tsion</div>
+                        <?php 
+                            foreach($data['patients'] as $row){
+                                if(!isset($row['fName'])) continue;
+                                echo'<div class="list">'.
+                                    $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
+                                    '</div>';
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="physicians">
@@ -57,19 +52,15 @@
                         <span id="title">Physicians </span>
                         <input type="search" name="physician-search" id="search-physician" placeholder="Search physicians">
                     </div>
-                    <?php 
-                    foreach($data['doctors'] as $row){
-                        if(!isset($row['fName'])) continue;
-                        echo'<div class="phy-list">'.
-                            $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
-                            '</div>';
-                    }
-                    ?>
                     <div class="phy-scroll">
-                        <div class="list">Abebe</div>
-                        <div class="list">Kebebush</div>
-                        <div class="list">Ayelu</div>
-                        <div class="list">Tsion</div>
+                        <?php 
+                            foreach($data['doctors'] as $row){
+                                if(!isset($row['fName'])) continue;
+                                echo'<div class="list">'.
+                                    $row['fName'] . ' ' . $row['lName'] .
+                                    '</div>';
+                            }
+                    ?>
                     </div>
                 </div>
             </div>
@@ -95,8 +86,6 @@
                 </div>
             </div>
         </div>
-        </form>
-        
     </div>
 </body>
 <script>
