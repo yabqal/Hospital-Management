@@ -69,17 +69,31 @@
                 <div class="arranged-schedule">
                     <h4>Arranged Schedule</h4>
                     <hr/>
-                    <span>Patient: <b id="selected-patient"></b></span>
+                    
+                    <span>Patient: <b id="selected-patient" value=<?php
+                    if(isset($data['patient'])) echo $data['fName'] . $data['mName'] . $data['lName'];
+                    else echo '';
+                    ?>
+                    ></b></span>
                     <p>Assigned to</p>
-                    <span>Physician: <b id="selected-physician"></b></span>
+                    <span>Physician: <b id="selected-physician" value=<?php
+                    if(isset($data['doctor'])) echo $data['fName'] . $data['lName'];
+                    else echo '';
+                    ?>></b></span>
                     <p>On</p>
                     <span>Date: <b id="selected-date"></b></span>
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
                     <form action="/submit-appointment" method="POST">
-                        <input type="hidden" name="pid" id="hidden-patient">
-                        <input type="hidden" name="did" id="hidden-physician">
+                        <input type="hidden" name="pid" id="hidden-patient" value=<?php
+                    if(isset($data['patient'])) echo $data['id'];
+                    else echo '';
+                    ?>>
+                        <input type="hidden" name="did" id="hidden-physician" value=<?php
+                    if(isset($data['patient'])) echo $data['id'];
+                    else echo '';
+                    ?>>
                         <input type="hidden" name="date" id="hidden-date">
                         <input id="confirm-btn" type="submit" name="submit" value="Confirm">
                     </form>

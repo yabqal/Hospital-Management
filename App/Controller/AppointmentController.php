@@ -11,9 +11,13 @@ class AppointmentController{
 
     public function recApp($requestdata = []){
         $a = new Appointment();
+        if(isset($requestdata['submit-appointment'])) unset($requestdata['submit-appointment']);
+
+        if(isset($requestdata['submit'])) unset($requestdata['submit']);
+
         $a->insert($requestdata);
 
-        header("Location: /appointments");
+        header("Location: /register-appointment");
         exit();
     }
 
@@ -57,6 +61,8 @@ class AppointmentController{
         unset($dData[0]);
 
         $requestdata = array_merge($aData, $pData, $dData);
+
+        View::render('detail-appointment', $requestdata);
     }
 
     public function updateApp($requestdata){

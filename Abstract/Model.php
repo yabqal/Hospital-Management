@@ -86,7 +86,7 @@ abstract class Model{
                     );
         }
         catch (mysqli_sql_exception $e){
-            $error = 'Could not delete ' . rtrim($this->_table) . ' into the database';
+            $error = 'Could not delete ' . rtrim($this->_table, 's') . ' into the database';
             header("Location: /error?error=" . urlencode($error));
             exit();
         }
@@ -94,10 +94,18 @@ abstract class Model{
     }
 
     function searchByID($id){
-        return mysqli_fetch_all(
+        try {
+            return mysqli_fetch_all(
                     mysqli_query(static::$db,
                     "SELECT * FROM " . $this->_table . " WHERE id = " . $id)
                     , MYSQLI_ASSOC);
+        }
+        catch (mysqli_sql_exception $e){
+            $error = 'Could not search the database for the ' . rtrim($this->_table, 's');
+            header("Location: /error?error=" . urlencode($error));
+            exit();
+        }
+        
     }
 
 }

@@ -78,9 +78,9 @@ $routes = [
     '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
 
 
-    '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'],
-    '/submit-appointment'               => ['controller' => 'AppointmentController', 'action' => 'recApp'],
-    '/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
+    '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'], //tested
+    '/submit-appointment'               => ['controller' => 'AppointmentController', 'action' => 'recApp'], //tested
+    //'/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
     '/appointments/remove'              => ['controller' => 'AppointmentController', 'action' => 'delApp'],
     '/appointment'                      => ['controller' => 'AppointmentController', 'action' => 'detailApp'],
     '/appointment/update'               => ['controller' => 'AppointmentController', 'action' => 'updateApp'],
