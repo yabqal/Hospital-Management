@@ -78,7 +78,7 @@
 
         <div class="photo-and-btn">
           <div></div>
-          <input type="submit" class="submit-btn" value="Register">
+          <button type="submit" class="submit-btn">Register</button>
         </div>
       </form>
     </div>

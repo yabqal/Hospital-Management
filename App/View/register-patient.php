@@ -89,7 +89,7 @@
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
         <div class="photo-and-btn">
           <input type="file" name="photo" id="photo">
-          <input type="submit" class="submit-btn" value="Register">
+          <button type="submit" class="submit-btn">Register</button>
         </div>
       </form>
     </div>

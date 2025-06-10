@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient details</title>
+    <title>Physician details</title>
     <link rel="stylesheet" href="/styles/common.css"/>
     <link rel="stylesheet" href="/styles/patient-details.css"/>
     <link rel="stylesheet" href="/styles/patient-list.css"/>
@@ -23,7 +23,7 @@
   <div class="page-container">
     <div class="top-bar">
         <div class="title-button">
-          <div class="title">Patient Detail</div>
+          <div class="title">Physician Detail</div>
           <div class="nav-btns">
             <a href="/patients"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
             <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
@@ -34,25 +34,20 @@
       </div>
 
     <div class="patient-info">
-        
-        <?php
-        echo "<img src=/uploads/{$data['photo']} alt='patient image'/>"
-        ?>
-        
-        <div class="details">
-           <p>Full Name: <span class="detail"><?php echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName']; ?></span></p>
-            <p>Age: <span class="detail"><?php echo $data['age']; ?></span></p>
-            <p>Sex: <span class="detail"><?php if($data['sex'] == 0) {echo 'Female';} else{echo 'Male';} ?></span></p>
-            <p>Address: <span class="detail"><?php echo $data['address']; ?></span></p>
-            <p>Registration Date: <span class="detail"><?php echo $data['date']; ?></span></p>
-            <div class="buttons-container">
-              <?php
-                echo '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Physician ' . '</div></a>' .
-                '<a href=""><div class="button assign-room">'. '<img src="/icon/key-2.svg" />' . ' Assign to Room ' . '</div></a>' .
-                '<a href="/patients/remove?id='.$data['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>'
-              ?>
-            </div>
+      <div class="details">
+        <p>Full Name: <span class="detail"><?php echo $data['fName'] . ' ' . $data['lName']; ?></span></p>
+        <p>Age: <span class="detail"><?php echo $data['age']; ?></span></p>
+        <p>Specialization: <span class="detail"><?php echo $data['specialization']; ?></span></p>
+        <p>Phone: <span class="detail"><?php echo $data['phone']; ?></span></p>
+        <p>Address: <span class="detail"><?php echo $data['address']; ?></span></p>
+        <p>Working Hours: <span class="detail"><?php echo $data['workingHours']; ?></span></p>
+        <div class="buttons-container">
+          <?php
+            echo '<a href=""><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Patient ' . '</div></a>' .
+            '<a href="/patients/remove?id='.$data['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />' . ' Remove ' . '</div></a>'
+          ?>
         </div>
+      </div>
     </div>
     <div class="medication-details">
         <div class="description">

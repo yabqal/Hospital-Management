@@ -27,11 +27,11 @@
       <hr>
     </div>
     <div class="choice-list">
-      <a href="/register-choice"><div class="list-item"><img src="/icons/profile-2.svg" alt="">Register patients and physicians</div></a>
-      <a href="/details-choice"><div class="list-item"><img src="/icons/paragraph.svg" alt="">Details of patients and physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/check-2.svg" alt="">Available Physicians</div></a>
-      <a href="/"><div class="list-item"><img src="/icons/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
-      <a href="/rooms"><div class="list-item"><img src="/icons/key-2.svg" alt="">View Rooms</div></a>
+      <a href="/register-choice"><div class="list-item"><img src="/icon/profile-2.svg" alt="">Register patients and physicians</div></a>
+      <a href="/details-choice"><div class="list-item"><img src="/icon/paragraph.svg" alt="">Details of patients and physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icon/check-2.svg" alt="">Available Physicians</div></a>
+      <a href="/"><div class="list-item"><img src="/icon/calendar-2.svg" alt="">Schedule a physician meeting</div></a>
+      <a href="/rooms"><div class="list-item"><img src="/icon/key-2.svg" alt="">View Rooms</div></a>
     </div>
   </div>
 </body>
