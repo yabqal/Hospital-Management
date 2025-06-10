@@ -35,26 +35,7 @@
       </div>
       <hr />
     </div>
-    <?php
-    # to connect the db 
-      if (isset($_GET['id'])) {
-          $patientId = $_GET['id'];
 
-          $stmt = $conn->prepare("SELECT * FROM patients WHERE id = ?");
-          $stmt->bind_param("i", $patientId);
-          $stmt->execute();
-          $result = $stmt->get_result();
-          $patient = $result->fetch_assoc();
-
-          if (!$patient) {
-            echo "<p>Patient not found.</p>";
-            exit;
-          }
-      }else{
-          echo "<p>No patient ID specified.</p>";
-          exit;
-      }
-    ?>
     <div class="patient-info">
         
         <?php
@@ -62,14 +43,14 @@
         ?>
         
         <div class="details">
-            <p>Full Name: <span><?php echo $patient['fName'] . ' ' . $patient['mName'] . ' ' . $patient['lName']; ?></span></p>
-            <p>Age: <span><?php echo $patient['age']; ?></span></p>
-            <p>Address: <span><?php echo $patient['address']; ?></span></p>
-            <p>Registration Date: <span><?php echo $patient['regDate']; ?></span></p>
+            <p>Full Name: <span><?php echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName']; ?></span></p>
+            <p>Age: <span><?php echo $data['age']; ?></span></p>
+            <p>Address: <span><?php echo $data['address']; ?></span></p>
+            <p>Registration Date: <span><?php echo $data['regDate']; ?></span></p>
             <div class="actions">
-                <button id="physicianto-<?php echo $patientId; ?>">Assign to Physician</button>
-                <button id="roomto-<?php echo $patientId; ?>">Assign to Room</button>
-                <button id="remove-<?php echo $patientId; ?>">Remove</button>
+                <button id="physicianto-<?php echo $data['id']; ?>">Assign to Physician</button>
+                <button id="roomto-<?php echo $data['id']; ?>">Assign to Room</button>
+                <button id="remove-<?php echo $data['id']; ?>">Remove</button>
             </div>
         </div>
     </div>
@@ -77,7 +58,7 @@
         <div class="description">
             <p>Description: </p>
             <div class="description-text">
-                <p><?php echo $patient['description']; ?></p>
+                <p><?php echo $data['description']; ?></p>
             </div>
         </div>
 
@@ -85,7 +66,7 @@
         <div class="prev-meds">
             <p>Previous Medications: </p>
             <div class="med-text">
-                <p><?php echo $patient['prevMeds']; ?></p>
+                <p><?php echo $data['prevMeds']; ?></p>
             </div>
         </div>
     </div>
