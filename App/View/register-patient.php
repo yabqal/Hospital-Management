@@ -25,8 +25,8 @@
       <div class="title-button">
         <div class="title">Register Patient</div>
         <div class="nav-btns">
-          <a href="/register-choice"><div class="back-btn"><img src="/icons/arrow-left.svg" alt="" /></div></a>
-          <a href="/"><div class="home-btn"><img src="/icons/home-2.svg" alt="" /></div></a>
+          <a href="/register-choice"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+          <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
           <a href="/logout"><div class="log-out-btn">Log Out</div></a>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class="input-group">
           <input class="inp age-input" type="number" min="0" placeholder="Age" name="age">
           <input class="inp add-input" type="text" placeholder="Address" name="address">
-          <input class="inp date-input" type="date" placeholder="Date" name="date">
+          <input class="inp date-input" title="Registration Date"  type="date" placeholder="Date" name="date">
         </div>
 
         <div class="input-group equal-inp">
@@ -88,7 +88,10 @@
         <div class="section-title" style="margin-top: 48px;">Additional Details</div>
         <textarea class="inp txt-area" name="description" id="description" placeholder="Description"></textarea>
         <div class="photo-and-btn">
-          <input type="file" name="photo" id="photo">
+          <div>
+            <label style="margin-right: 12px;" for="photo">Patient Image: </label>
+            <input type="file" name="photo" id="photo">
+          </div>
           <button type="submit" class="submit-btn">Register</button>
         </div>
       </form>

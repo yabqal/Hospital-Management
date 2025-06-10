@@ -27,8 +27,10 @@ body, html{
     gap: 30px;
 }
 
-.patient-info img{
+.patient-info .profile-pic{
     width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 12px;
 }
 

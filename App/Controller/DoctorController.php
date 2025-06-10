@@ -55,12 +55,13 @@ class DoctorController {
 
     public function availableDoc($requestdata = []){
         $d = new Doctor();
-        $requestdata = $d->getAvailable();
+        //$requestdata = $d->getAvailable();
+        $requestdata = array_merge($requestdata, $d->getAvailable());
 
-        View::render('list-doctor', $requestdata);
+        View::render('available-doctors', $requestdata);
     }
 
-    private function assignRoomDoc($requestdata = []){
+    private function assignRoomDoc($requestdata = []){  
         $p = new Doctor();
         $r = new Room();
 
@@ -71,6 +72,9 @@ class DoctorController {
         }
         else{
             //fallback, tell user room is taken
+            $error = 'Room already taken';
+            header("Location: /error?error=" . urlencode($error));
+            exit();
         }
     }
 

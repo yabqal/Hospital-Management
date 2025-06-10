@@ -21,9 +21,9 @@
             <div class="title-button">
                 <div class="title">Schedule Patient Meeting</div>
                 <div class="nav-btns">
-                    <div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div>
-                    <div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div>
-                    <div class="leave-btn"><img src="/icon/leave-3 1.png" alt=""></div>
+                    <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+                    <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
+                    <a href="/logout"><div class="log-out-btn">Log Out</div></a>
                 </div>
             </div>
             <hr />
@@ -33,7 +33,7 @@
             <div class="patients-list">
                 <div class="patients">
                     <div class="patient-titlebar">
-                        <span id="title">Patients </span>
+                        <span style="font-size: 18px; font-weight: bold;" id="title">Patients </span>
                         <input type="search" name="patient-search" id="search-patient" placeholder="Search patient">
                     </div>
                     <div class="pat-scroll">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="physicians">
                     <div class="patient-titlebar">
-                        <span id="title">Physicians </span>
+                        <span style="font-size: 18px; font-weight: bold;" id="title">Physicians </span>
                         <input type="search" name="physician-search" id="search-physician" placeholder="Search physicians">
                     </div>
                     <div class="phy-scroll">
@@ -67,19 +67,38 @@
             <div class="scheduling">
                 <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
                 <div class="arranged-schedule">
-                    <h4>Arranged Schedule</h4>
-                    <hr/>
-                    <span>Patient: <b id="selected-patient"></b></span>
-                    <p>Assigned to</p>
-                    <span>Physician: <b id="selected-physician"></b></span>
-                    <p>On</p>
-                    <span>Date: <b id="selected-date"></b></span>
+<h3>Arranged Schedule</h3>
+                    <hr style="margin-bottom: 24px;"/>
+                    <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient">
+                        <?php
+                    if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
+                    else echo '';
+                    ?>
+                    </span></span>
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">Assigned to</p>
+                    <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician">
+                        <?php
+                    if(isset($data['doctor'])) echo $data['fName'] . ' ' . $data['lName'];
+                    else echo '';
+                    ?>
+                    </span></span>
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">On</p>
+                    <span>Date: <span style="margin-left: 8px; font-weight: 500;" id="selected-date"></span></span>
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
                     <form action="/submit-appointment" method="POST" onsubmit="return validateDate()">
                         <input type="hidden" name="pid" id="hidden-patient">
                         <input type="hidden" name="did" id="hidden-physician">
+                    <form action="/submit-appointment" method="POST">
+                        <input type="hidden" name="pid" id="hidden-patient" value=<?php
+                    if(isset($data['patient'])) echo $data['id'];
+                    else echo '';
+                    ?>>
+                        <input type="hidden" name="did" id="hidden-physician" value=<?php
+                    if(isset($data['doctor'])) echo $data['id'];
+                    else echo '';
+                    ?>>
                         <input type="hidden" name="date" id="hidden-date">
                         <input id="confirm-btn" type="submit" name="submit" value="Confirm">
                     </form>
