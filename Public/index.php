@@ -36,7 +36,7 @@ $routes = [
 
     '/login'                            => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/login-auth'                       => ['controller' => 'AuthController', 'action' => 'authLogin'],
-    '/signup'                           => ['controller' => 'AuthController', 'action' => 'showSignup'],
+    // '/signup'                           => ['controller' => 'AuthController', 'action' => 'showSignup'],
     '/logout'                           => ['controller' => 'AuthController', 'action' => 'logout'],
 
 
@@ -58,24 +58,25 @@ $routes = [
     '/patients'                         => ['controller' => 'PatientController', 'action' => 'listPat'], // tested
     '/patient'                          => ['controller' => 'PatientController', 'action' => 'detailPat'], // tested
 
+
     //why would they search by id??? Also why are we using post instead of get???
     //"/patients/{$_POST['id']}"          => ['controller' => 'PatientController', 'action' => 'patByID'],
     //"/patients/{$_POST['name']}"        => ['controller' => 'PatientController', 'action' => 'patByName'],
 
     "/patients/remove"                  => ['controller' => 'PatientController', 'action' => 'delPat'], //tested
     "/patients/assign-room"             => ['controller' => 'PatientController', 'action' => 'assignRoomPat'],
-    'patient/update'                    => ['controller' => 'PatientController', 'action' => 'updatePat'],
+    '/patient/update'                    => ['controller' => 'PatientController', 'action' => 'showUp'],
 
 
     //avaiable rooms, add take and leave room and related things???
-    '/register-room'                    => ['controller' => 'RoomController', 'action' => 'showRoomReg'],
-    '/submit-room'                      => ['controller' => 'RoomController', 'action' => 'recRoom'],
+    // '/register-room'                    => ['controller' => 'RoomController', 'action' => 'showRoomReg'],
+    // '/submit-room'                      => ['controller' => 'RoomController', 'action' => 'recRoom'],
     '/rooms'                            => ['controller' => 'RoomController', 'action' => 'listRoom'],
-    '/rooms/remove'                     => ['controller' => 'RoomController', 'action' => 'delRoom'],
+    // '/rooms/remove'                     => ['controller' => 'RoomController', 'action' => 'delRoom'],
     '/rooms/occupy'                     => ['controller' => 'RoomController', 'action' => 'occupyRoom'],
     '/rooms/free'                       => ['controller' => 'RoomController', 'action' => 'freeRoom'],
     //"/rooms/{$_POST['id']}"             => ['controller' => 'RoomController', 'action' => 'delRoom'],
-    '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
+    // '/room/update'                      => ['controller' => 'RoomController', 'action' => 'updateRoom'],
 
 
     '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'], //tested
