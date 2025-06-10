@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="scheduling">
-                <input class="inp input-date" type="date" placeholder="Choose Date" name="date">
+                <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
                 <div class="arranged-schedule">
                     <h4>Arranged Schedule</h4>
                     <hr/>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
-                    <form action="/submit-appointment" method="POST">
+                    <form action="/submit-appointment" method="POST" onsubmit="return validateDate()">
                         <input type="hidden" name="pid" id="hidden-patient">
                         <input type="hidden" name="did" id="hidden-physician">
                         <input type="hidden" name="date" id="hidden-date">
@@ -89,7 +89,6 @@
     </div>
 </body>
 <script>
-
     const patientselected = document.getElementById("selected-patient");
     const physicianselected = document.getElementById("selected-physician");
     const date = document.querySelector(".input-date");
@@ -106,38 +105,13 @@
             const searchValue = input.value.toLowerCase();
             listItems.forEach(item => {
                 const text = item.textContent.toLowerCase();
-                if(text.includes(searchValue)){
-                    item.style.display = "block";
-                }else{
-                    item.style.display = "none";
-                }
+                item.style.display = text.includes(searchValue) ? "block" : "none";
             });
         });
     }
 
     setupSearch("search-patient", "pat-scroll");
     setupSearch("search-physician", "phy-scroll");
-
-    document.querySelectorAll(".pat-scroll .list").forEach(item => {
-        item.addEventListener("click", () => {
-            patientselected.textContent = item.textContent;
-        });
-    });
-
-    document.querySelectorAll(".phy-scroll .list").forEach(item => {
-        item.addEventListener("click", () => {
-            physicianselected.textContent = item.textContent;
-        });
-    });
-
-    document.querySelector("#clear-btn").addEventListener("click", function(){
-        patientselected.textContent = "";
-        physicianselected.textContent = "";
-    });
-
-    date.addEventListener("input", () => {
-        dateselected.textContent = date.value;
-    });
 
     document.querySelectorAll(".pat-scroll .list").forEach(item => {
         item.addEventListener("click", () => {
@@ -157,5 +131,26 @@
         dateselected.textContent = date.value;
         hiddendate.value = date.value;
     });
+
+    document.querySelector("#clear-btn").addEventListener("click", function(){
+        patientselected.textContent = "";
+        physicianselected.textContent = "";
+    });
+
+    // Prevent past date selection
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("date-input").setAttribute("min", today);
+
+    function validateDate() {
+        const selectedDate = new Date(date.value);
+        const now = new Date();
+        now.setHours(0, 0, 0, 0); // Remove time component
+
+        if (selectedDate < now) {
+            alert("You cannot choose a past date for the appointment.");
+            return false;
+        }
+        return true;
+    }
 </script>
 </html>
