@@ -25,7 +25,7 @@
         <div class="title-button">
           <div class="title">Physician Detail</div>
           <div class="nav-btns">
-            <a href="/patients"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+            <a href="/doctors"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
             <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
             <a href="/logout"><div class="log-out-btn">Log Out</div></a>
           </div>

@@ -21,9 +21,9 @@
             <div class="title-button">
                 <div class="title">Schedule Patient Meeting</div>
                 <div class="nav-btns">
-                    <div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div>
-                    <div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div>
-                    <div class="leave-btn"><img src="/icon/leave-3 1.png" alt=""></div>
+                    <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+                    <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
+                    <a href="/logout"><div class="log-out-btn">Log Out</div></a>
                 </div>
             </div>
             <hr />

@@ -55,9 +55,10 @@ class DoctorController {
 
     public function availableDoc($requestdata = []){
         $d = new Doctor();
-        $requestdata = $d->getAvailable();
+        //$requestdata = $d->getAvailable();
+        $requestdata = array_merge($requestdata, $d->getAvailable());
 
-        View::render('list-doctor', $requestdata);
+        View::render('available-doctors', $requestdata);
     }
 
     private function assignRoomDoc($requestdata = []){

@@ -20,11 +20,12 @@ class Doctor extends Model{
     }
 
     function getAvailable(){
-        return mysqli_fetch_all(
-            mysqli_query(static::$db,
-            "SELECT * FROM " . $this->_table . " WHERE available = TRUE"
-                )
-            );
+        // return mysqli_fetch_all(
+        //     mysqli_query(static::$db,
+        //     "SELECT * FROM " . $this->_table . " WHERE available = TRUE"
+        //         )
+        //     );
+        return mysqli_fetch_all(mysqli_query(Model::$db, "SELECT * FROM "  . $this->_table . " WHERE available = TRUE"), MYSQLI_ASSOC);
     }
     
     function assignRoom($data){

@@ -36,7 +36,7 @@
     <div class="patient-info">
         
         <?php
-        echo "<img src=/uploads/{$data['photo']} alt='patient image'/>"
+        echo "<img class='profile-pic' src=/uploads/{$data['photo']} alt='patient image'/>"
         ?>
         
         <div class="details">
