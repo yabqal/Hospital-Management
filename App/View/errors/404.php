@@ -10,6 +10,9 @@
     <div class="err-body">
         <h1>404</h1>
         <h2>Page Not Found</h2>
+        <form action="/">
+            <button type="submit">Go Back</button>
+        </form>
     </div>
 </body>
 </html>

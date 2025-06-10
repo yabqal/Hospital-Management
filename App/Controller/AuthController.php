@@ -10,7 +10,7 @@ class AuthController{
     $username = $requestdata['username'] ?? '';
     $password = $requestdata['password'] ?? '';
 
-    $conn = new mysqli("localhost", "root", "", "hospital-mangement");
+    $conn = new mysqli("localhost", "root", "password", "hospital-mangement");
 
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);

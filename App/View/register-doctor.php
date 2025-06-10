@@ -46,8 +46,8 @@
           <div class="sex-input">
             <select class="inp sex-input" name="sex" required>
             <option value="" disabled selected>Sex</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
           </select>
           </div>
           <input class="inp" type="number" min="22" max="100" placeholder="Age" name="age" required />
