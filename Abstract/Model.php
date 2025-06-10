@@ -10,7 +10,7 @@ abstract class Model{
         if(static::$db === null){
             try {
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-                static::$db = new mysqli("localhost", "root", "", "hospital-mangement");
+                static::$db = new mysqli("localhost", "root", "password", "hospital-mangement");
 
             } catch (mysqli_sql_exception $e) {
                 $error = 'Could not connect to the database';

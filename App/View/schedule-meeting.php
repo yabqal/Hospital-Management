@@ -33,7 +33,7 @@
             <div class="patients-list">
                 <div class="patients">
                     <div class="patient-titlebar">
-                        <span id="title">Patients </span>
+                        <span style="font-size: 18px; font-weight: bold;" id="title">Patients </span>
                         <input type="search" name="patient-search" id="search-patient" placeholder="Search patient">
                     </div>
                     <div class="pat-scroll">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="physicians">
                     <div class="patient-titlebar">
-                        <span id="title">Physicians </span>
+                        <span style="font-size: 18px; font-weight: bold;" id="title">Physicians </span>
                         <input type="search" name="physician-search" id="search-physician" placeholder="Search physicians">
                     </div>
                     <div class="phy-scroll">
@@ -67,13 +67,13 @@
             <div class="scheduling">
                 <input class="inp input-date" type="date" placeholder="Choose Date" name="date" id="date-input">
                 <div class="arranged-schedule">
-                    <h4>Arranged Schedule</h4>
-                    <hr/>
-                    <span>Patient: <b id="selected-patient"></b></span>
-                    <p>Assigned to</p>
-                    <span>Physician: <b id="selected-physician"></b></span>
-                    <p>On</p>
-                    <span>Date: <b id="selected-date"></b></span>
+                    <h3>Arranged Schedule</h3>
+                    <hr style="margin-bottom: 24px;"/>
+                    <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient"></span></span>
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">Assigned to</p>
+                    <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician"></span></span>
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">On</p>
+                    <span>Date: <span style="margin-left: 8px; font-weight: 500;" id="selected-date"></span></span>
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
