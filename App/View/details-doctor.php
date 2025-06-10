@@ -45,7 +45,8 @@
           <?php
             $requestD = "id=" . $data['id'] . "&fName=" . $data['fName'] . "&lName=" . $data['lName'] . "&doctor=1";
             echo '<a href="/register-appointment?'.$requestD.'"><div class="button assign-physician">'. '<img src="/icon/accessibility-2.svg" />' . ' Assign to Patient ' . '</div></a>' .
-          '<a href="/doctors/remove?id='.$row['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />'
+            '<a href="/update-doctor.php?id='.$data['id'].'"><div class="button update"><img src="/icon/edit-2.svg" /> Update </div></a>' .
+          '<a href="/doctors/remove?id='.$data['id'].'"><div class="button remove">'. '<img src="/icon/c-delete-2.svg" />'
           ?>
         </div>
       </div>
