@@ -14,6 +14,10 @@ class HomeController{
     public function details($requestdata = []){
         View::render('details-choice');
     }
+
+    public function schedule($requestdata = []){
+        View::render('schedule-choice');
+    }
 }
 
 ?>

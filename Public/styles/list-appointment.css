@@ -1,0 +1,48 @@
+.list-title{
+  margin-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.249);
+}
+
+.list-title span{
+  background-color: transparent;
+  padding-bottom: 8px;
+}
+
+.list-title .divider-item{
+  visibility: hidden;
+}
+
+.list-item{
+  background-color: transparent;
+  padding: 0px;
+}
+
+.list-item:hover{
+  box-shadow: none;
+}
+
+.list-item a{
+  width: 100%;
+}
+
+.list-item div{
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.data-item{
+  min-width: 20%;
+  text-align: center;
+  padding: 16px;
+  background-color: #101823;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.divider-item{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}

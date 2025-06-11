@@ -28,7 +28,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
             <div class="title-button">
                 <div class="title">Schedule  Appointment</div>
                 <div class="nav-btns">
-                    <a href="/"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
+                    <a href="/schedule-choice"><div class="back-btn"><img src="/icon/arrow-left.svg" alt="" /></div></a>
                     <a href="/"><div class="home-btn"><img src="/icon/home-2.svg" alt="" /></div></a>
                     <a href="/logout"><div class="log-out-btn">Log Out</div></a>
                 </div>
@@ -47,7 +47,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
                         <?php 
                             foreach($data['patients'] as $row){
                                 if(!isset($row['fName'])) continue;
-                                echo'<div class="list">'.
+                                echo'<div class="list" data-id="' . $row['id'] . '">' .
                                     $row['fName'] . ' ' . $row['mName'] . ' ' . $row['lName'] .
                                     '</div>';
                             }
@@ -63,7 +63,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
                         <?php 
                             foreach($data['doctors'] as $row){
                                 if(!isset($row['fName'])) continue;
-                                echo'<div class="list">'.
+                                echo'<div class="list" data-id="' . $row['id'] . '">' .
                                     $row['fName'] . ' ' . $row['lName'] .
                                     '</div>';
                             }
@@ -80,33 +80,30 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
                 <h3>Arranged Schedule</h3>
                     <hr style="margin-bottom: 24px;"/>
                     <span">Patient: <span style="margin-left: 8px; font-weight: 500;" id="selected-patient">
-                        <?php
+                        <!--?php
                     if(isset($data['patient'])) echo $data['fName'] . ' ' . $data['mName'] . ' ' . $data['lName'];
                     else echo '';
-                    ?>
+                    ?-->
                     </span></span>
                     <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">Assigned to</p>
                     <span>Physician: <span style="margin-left: 8px; font-weight: 500;" id="selected-physician">
-                        <?php
-                    if(isset($data['doctor'])) echo $data['fName'] . ' ' . $data['lName'];
+                        <!--?php
+                    if(isset($data['doctor'])) echo $data['id'] . ' ' . $data['lName'];
                     else echo '';
-                    ?>
+                    ?-->
                     </span></span>
                     <p style="font-size: 14px; color: rgba(255, 255, 255, 0.45);">On</p>
                     <span>Date: <span style="margin-left: 8px; font-weight: 500;" id="selected-date"></span></span>
                 </div>
                 <div class="schedule-actions">
                     <input id="clear-btn" type="submit" name="submit" value="Clear">
-                    <form action="/submit-appointment" method="POST" onsubmit="return validateDate()">
-                        <input type="hidden" name="pid" id="hidden-patient">
-                        <input type="hidden" name="did" id="hidden-physician">
                     <form action="/submit-appointment" method="POST">
                         <input type="hidden" name="pid" id="hidden-patient" value=<?php
-                    if(isset($data['patient'])) echo $data['id'];
+                    if(isset($data['patient'])) echo $data['patient']['id'];
                     else echo '';
                     ?>>
                         <input type="hidden" name="did" id="hidden-physician" value=<?php
-                    if(isset($data['doctor'])) echo $data['id'];
+                    if(isset($data['doctor'])) echo $data['doctor']['id'];
                     else echo '';
                     ?>>
                         <input type="hidden" name="date" id="hidden-date">
@@ -145,14 +142,14 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
     document.querySelectorAll(".pat-scroll .list").forEach(item => {
         item.addEventListener("click", () => {
             patientselected.textContent = item.textContent;
-            hiddenpatient.value = item.textContent;
+            hiddenpatient.value = item.getAttribute('data-id');
         });
     });
 
     document.querySelectorAll(".phy-scroll .list").forEach(item => {
         item.addEventListener("click", () => {
             physicianselected.textContent = item.textContent;
-            hiddenphysician.value = item.textContent;
+            hiddenphysician.value = item.getAttribute('data-id');
         });
     });
 

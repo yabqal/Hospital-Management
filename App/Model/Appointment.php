@@ -12,11 +12,9 @@ class Appointment extends Model{
     function getAll(){
         //fix the query based on the actual cols the table has
         return mysqli_fetch_all(mysqli_query(Model::$db,
-               "SELECT appointments.id, doctors.name AS doctorName, patients.name AS patientName, date, reason FROM appointments
-                JOIN Doctors ON Doctors.id = appointments.did
-                JOIN Patients ON Patients.id = appointments.pid"
-               ),
-               MYSQLI_ASSOC);
+         "SELECT appointments.id, CONCAT(doctors.fName, ' ', doctors.lName) AS doctorName, CONCAT(patients.fName, ' ', patients.mName, ' ', patients.lName) AS patientName, appointments.date FROM appointments
+            JOIN Doctors ON Doctors.id = appointments.did
+            JOIN Patients ON Patients.id = appointments.pid;" ), MYSQLI_ASSOC);
     }
 
 }

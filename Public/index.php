@@ -32,6 +32,7 @@ $routes = [
     '/'                                 => ['controller' => 'HomeController', 'action' => 'index'], //tested
     '/register-choice'                  => ['controller' => 'HomeController', 'action' => 'register'], //tested
     '/details-choice'                   => ['controller' => 'HomeController', 'action' => 'details'], //tested
+    '/schedule-choice'                  => ['controller' => 'HomeController', 'action' => 'schedule'], //tested
 
 
     '/login'                            => ['controller' => 'AuthController', 'action' => 'showLogin'],
@@ -82,7 +83,7 @@ $routes = [
 
     '/register-appointment'             => ['controller' => 'AppointmentController', 'action' => 'showAppReg'], //tested
     '/submit-appointment'               => ['controller' => 'AppointmentController', 'action' => 'recApp'], //tested
-    //'/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
+    '/appointments'                     => ['controller' => 'AppointmentController', 'action' => 'listApp'],
     '/appointments/remove'              => ['controller' => 'AppointmentController', 'action' => 'delApp'],
     '/appointment'                      => ['controller' => 'AppointmentController', 'action' => 'detailApp'],
     '/appointment/update'               => ['controller' => 'AppointmentController', 'action' => 'updateApp'],
