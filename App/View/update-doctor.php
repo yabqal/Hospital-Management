@@ -29,7 +29,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
     </div>
 
     <div class="form-container">
-      <form action="/update-doctor-save.php" method="POST">
+      <form action="/doctor/updateD" method="POST">
         <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" />
         <div class="section-title">Basic Details</div>
         <div class="input-group">
@@ -64,7 +64,7 @@ if (!isset($_SESSION['user']) && $requestPath != '/login') {
 
         <div class="photo-and-btn">
           <div></div>
-          <button type="submit" class="submit-btn">Save Changes</button>
+          <input type="submit" class="submit-btn" value="Save Changes">
         </div>
       </form>
     </div>
